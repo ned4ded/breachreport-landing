@@ -1,0 +1,37 @@
+[
+  {
+    "name" : "about",
+    "_name" : "about",
+    "ref" : "./#home"
+  },
+  {
+    "name" : "what-we-do",
+    "_name" : "what we do",
+    "ref" : "./#features"
+  },
+  {
+    "name" : "how-it-works",
+    "_name" : "how it works",
+    "ref" : "//github.com/arrayio/array-io-keychain/releases"
+  },
+  {
+    "name" : "pricing",
+    "_name" : "pricing",
+    "ref" : "//arrayio.github.io/KeyChain/"
+  },
+  {
+    "name" : "news",
+    "_name" : "news",
+    "ref" : "//arrayio.github.io/KeyChain/"
+  },
+  {
+    "name" : "portal",
+    "_name" : "portal",
+    "ref" : "//arrayio.github.io/KeyChain/"
+  },
+  {
+    "name" : "try",
+    "_name" : "try for free",
+    "ref" : "//array.io/"
+  }
+]
