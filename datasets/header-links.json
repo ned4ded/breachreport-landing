@@ -28,10 +28,5 @@
     "name" : "portal",
     "_name" : "portal",
     "ref" : "//arrayio.github.io/KeyChain/"
-  },
-  {
-    "name" : "try",
-    "_name" : "try for free",
-    "ref" : "//array.io/"
   }
 ]

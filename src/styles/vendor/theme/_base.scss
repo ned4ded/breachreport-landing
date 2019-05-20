@@ -10,3 +10,12 @@
 @import "../../../../lib/themes/softino/scss/base.scss";
 @import "../../../../lib/themes/softino/scss/style.scss";
 @import "../../../../lib/themes/softino/scss/responsive.scss";
+
+.logo img {
+  width: auto;
+  height: 60px;
+
+  @include bp-up(lg) {
+    height: 90px;
+  }
+}
