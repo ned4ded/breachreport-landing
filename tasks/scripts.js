@@ -5,7 +5,7 @@ import webpackStream from 'webpack-stream';
 import webpack from 'webpack';
 
 let wpConfig = {
-  mode: 'production',
+  mode: 'development',
   output: {
     filename: '[name].js',
   },
@@ -22,14 +22,14 @@ let wpConfig = {
   },
   plugins: [
     new webpack.ProvidePlugin({
-      $: 'jquery/dist/jquery.min',
-      jQuery: 'jquery/dist/jquery.min',
-      Popper: 'popper.js/dist/popper.min'
+      $: 'jquery',
+      jQuery: 'jquery',
+      Popper: 'popper.js'
     }),
-    new webpack.SourceMapDevToolPlugin({
-      filename: '[name].js.map',
-      exclude: ['vendor.js']
-    }),
+    // new webpack.SourceMapDevToolPlugin({
+    //   filename: '[name].js.map',
+    //   exclude: ['vendor.js']
+    // }),
   ],
   optimization: {
     splitChunks: {
