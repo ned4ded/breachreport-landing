@@ -13,7 +13,7 @@ let wpConfig = {
     rules: [
       {
         test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules|bower_components|lib)/,
         use: {
           loader: 'babel-loader?cacheDirectory=true',
         }
@@ -22,9 +22,9 @@ let wpConfig = {
   },
   plugins: [
     new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      Popper: 'popper.js'
+      $: 'jquery/dist/jquery.min',
+      jQuery: 'jquery/dist/jquery.min',
+      Popper: 'popper.js/dist/popper.min'
     }),
     new webpack.SourceMapDevToolPlugin({
       filename: '[name].js.map',
@@ -35,7 +35,7 @@ let wpConfig = {
     splitChunks: {
       cacheGroups: {
         vendor: {
-          test: /[\\/]node_modules[\\/]/,
+          test: /([\\/]node_modules[\\/]|[\\/]lib[\\/])/,
           name: 'vendor',
           chunks: 'all'
         }

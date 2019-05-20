@@ -1,0 +1,23 @@
+import 'jquery/dist/jquery.min'
+import 'popper.js/dist/popper.min'
+import 'bootstrap/dist/js/bootstrap.min'
+
+import '../../lib/themes/softino/js/jquery.appear'
+// import '../../lib/themes/softino/js/modernizr'
+import '../../lib/themes/softino/js/jquery.easing.min'
+import '../../lib/themes/softino/js/menu/jquery.smartmenus'
+// import '../../lib/themes/softino/js/owl-carousel/owl.carousel.min'
+import '../../lib/themes/softino/js/magnific-popup/jquery.magnific-popup.min'
+import '../../lib/themes/softino/js/counter/counter'
+import '../../lib/themes/softino/js/countdown/jquery.countdown.min'
+import '../../lib/themes/softino/js/contact-form/contact-form'
+import '../../lib/themes/softino/js/contact-form/jquery.validate.min'
+
+// import '../../lib/themes/softino/js/canvas'
+// import '../../lib/themes/softino/js/confetti'
+// import '../../lib/themes/softino/js/morph'
+// import '../../lib/themes/softino/js/snap.svg'
+// import '../../lib/themes/softino/js/step'
+
+import '../../lib/themes/softino/js/wow.min'
+import '../../lib/themes/softino/js/theme-script'
