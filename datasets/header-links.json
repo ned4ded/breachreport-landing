@@ -2,7 +2,7 @@
   {
     "name" : "about",
     "_name" : "about",
-    "ref" : "./#home"
+    "ref" : "./#about"
   },
   {
     "name" : "what-we-do",

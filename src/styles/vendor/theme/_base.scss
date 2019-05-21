@@ -11,11 +11,16 @@
 @import "../../../../lib/themes/softino/scss/style.scss";
 @import "../../../../lib/themes/softino/scss/responsive.scss";
 
-.logo img {
+.logo img,
+#header-wrap.fixed-header .logo img {
   width: auto;
   height: 25px;
 
   @include bp-up(lg) {
     height: 35px;
   }
+}
+
+.dark-grey-bg {
+  background-color: rgb(35, 47, 68);
 }
