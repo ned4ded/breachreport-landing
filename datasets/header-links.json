@@ -7,26 +7,26 @@
   {
     "name" : "what-we-do",
     "_name" : "what we do",
-    "ref" : "./#features"
+    "ref" : "./#what-we-do"
   },
   {
     "name" : "how-it-works",
     "_name" : "how it works",
-    "ref" : "//github.com/arrayio/array-io-keychain/releases"
+    "ref" : "./#how-it-works"
   },
   {
     "name" : "pricing",
     "_name" : "pricing",
-    "ref" : "//arrayio.github.io/KeyChain/"
+    "ref" : "./#pricing"
   },
   {
     "name" : "news",
     "_name" : "news",
-    "ref" : "//arrayio.github.io/KeyChain/"
+    "ref" : "//news.breachreport.com"
   },
   {
     "name" : "portal",
     "_name" : "portal",
-    "ref" : "//arrayio.github.io/KeyChain/"
+    "ref" : "//portal.breachreport.com"
   }
 ]
