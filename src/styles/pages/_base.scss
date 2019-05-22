@@ -1,0 +1,15 @@
+.page-home {
+  &__quotes {
+    & .testimonial-content {
+      min-height: 175px;
+
+      @include bp-up(md) {
+        min-height: 220px;
+      }
+
+      @include bp-up(xl) {
+        min-height: 175px;
+      }
+    }
+  }
+}

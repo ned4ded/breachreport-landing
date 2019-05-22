@@ -21,11 +21,11 @@ let wpConfig = {
     ]
   },
   plugins: [
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      Popper: 'popper.js'
-    }),
+    // new webpack.ProvidePlugin({
+    //   $: 'jquery',
+    //   jQuery: 'jquery',
+    //   Popper: 'popper.js'
+    // }),
     // new webpack.SourceMapDevToolPlugin({
     //   filename: '[name].js.map',
     //   exclude: ['vendor.js']

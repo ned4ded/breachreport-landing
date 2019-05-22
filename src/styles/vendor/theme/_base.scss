@@ -21,10 +21,54 @@
   }
 }
 
-.dark-grey-bg {
-  background-color: rgb(35, 47, 68);
-}
-
 .footer-logo img {
   height: 35px;
+}
+
+.dark-bg {
+  background-color: rgb(37, 42, 51);
+}
+
+.featured-item:hover a {
+  color: white;
+
+  transition-duration: 0;
+}
+
+.featured-item::after {
+  background: url(../assets/imgs/pattern/04.png) no-repeat 0 0;
+}
+
+.testimonial-icon {
+  position: relative;
+
+  .testimonial.style-2  & {
+    width: 200px;
+    height: 200px;
+
+    & [class^="flaticon"] {
+      color: rgb(47, 123, 252);
+    }
+  }
+
+  .controls & {
+    width: 100%;
+    height: 100%;
+
+    & [class^="flaticon"] {
+      font-size: 50px;
+    }
+  }
+
+  & [class^="flaticon"] {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 90px;
+  }
+}
+
+.featured-item.style-2:hover, .price-table:hover {
+    box-shadow: 0 20px 50px 0 rgba(72,73,121,.3);
 }

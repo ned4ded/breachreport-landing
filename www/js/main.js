@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// import { $,jQuery } from 'jquery'\n//\n// window.$ = $;\n// window.jQuery = jQuery;\n//\n// import 'popper.js'\n// import 'bootstrap'\n\n//# sourceURL=webpack:///./src/scripts/terminal.js?");
+eval("$(document).ready(function () {\n  $('[data-toggle=\"popover\"]').popover();\n});\n\n//# sourceURL=webpack:///./src/scripts/terminal.js?");
 
 /***/ })
 

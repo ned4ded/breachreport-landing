@@ -1,7 +1,3 @@
-// import { $,jQuery } from 'jquery'
-//
-// window.$ = $;
-// window.jQuery = jQuery;
-//
-// import 'popper.js'
-// import 'bootstrap'
+$( document ).ready(function () {
+  $('[data-toggle="popover"]').popover()
+})
