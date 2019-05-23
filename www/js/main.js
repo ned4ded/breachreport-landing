@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("$(document).ready(function () {\n  $('[data-toggle=\"popover\"]').popover();\n});\n\n//# sourceURL=webpack:///./src/scripts/terminal.js?");
+eval("$(document).ready(function () {\n  var formatter = function formatter(num) {\n    return Math.round(num).toString().replace(/(\\d)(?=(\\d{3})+(?!\\d))/g, '$1,');\n  };\n\n  $('[data-toggle=\"popover\"]').popover();\n  $('[data-count-number]').countTo({\n    formatter: formatter,\n    refreshInterval: 2\n  });\n});\n\n//# sourceURL=webpack:///./src/scripts/terminal.js?");
 
 /***/ })
 
