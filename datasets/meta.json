@@ -1,14 +1,14 @@
 {
   "lang" : "en",
   "charset" : "utf-8",
-  "title" : "Placeholder Title",
-  "description" : "description",
+  "title" : "Breach report - digital security platform",
+  "description" : "ATO prevention and 360 degrees credentials security",
   "favicon" : true,
   "og" : {
-    "use" : false,
-    "title" : "OG placeholder title",
-    "url" : "www.og-placeholder-url.com",
-    "site_name" : "og placeholder url",
-    "descr" : "og description"
+    "use" : true,
+    "title" : "Breach report- digital security platform",
+    "url" : "breachreport.com",
+    "site_name" : "breachreport.com",
+    "descr" : "ATO prevention and 360 degrees credentials security"
   }
 }
