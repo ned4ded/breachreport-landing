@@ -77,8 +77,16 @@
   color: $theme-color;
 }
 
+#what-we-do .featured-item {
+  min-height: 430px;
+}
+
 #what-we-do .feature-container {
   @include bp-up(lg) {
+    .featured-item {
+      min-height: auto;
+    }
+
     &:nth-child(1), &:nth-child(2), &:nth-child(3) {
       .featured-item {
         min-height: 420px;
