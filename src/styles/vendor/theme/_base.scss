@@ -72,3 +72,11 @@
 .featured-item.style-2:hover, .price-table:hover {
     box-shadow: 0 20px 50px 0 rgba(72,73,121,.3);
 }
+
+.featured-item.style-2:hover a {
+  color: $theme-color;
+}
+
+#what-we-do .featured-item {
+  min-height: 420px;
+}

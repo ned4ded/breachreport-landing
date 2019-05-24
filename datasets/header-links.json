@@ -2,22 +2,22 @@
   {
     "name" : "about",
     "_name" : "about",
-    "ref" : "./#about"
+    "ref" : "#about"
   },
   {
     "name" : "what-we-do",
     "_name" : "what we do",
-    "ref" : "./#what-we-do"
+    "ref" : "#what-we-do"
   },
   {
     "name" : "how-it-works",
     "_name" : "how it works",
-    "ref" : "./#how-it-works"
+    "ref" : "#how-it-works"
   },
   {
     "name" : "pricing",
     "_name" : "pricing",
-    "ref" : "./#pricing"
+    "ref" : "#pricing"
   },
   {
     "name" : "news",
