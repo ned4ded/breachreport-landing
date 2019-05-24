@@ -1,0 +1,15 @@
+.home {
+  &__note {
+    font-size: 1.25rem;
+
+    @include bp-up(lg) {
+      font-size: inherit;
+    }
+  }
+
+  &__info {
+    // @include bp-up(lg) {
+    //   font-size: inherit;
+    // }
+  }
+}
