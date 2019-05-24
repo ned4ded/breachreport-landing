@@ -77,6 +77,22 @@
   color: $theme-color;
 }
 
-#what-we-do .featured-item {
-  min-height: 420px;
+#what-we-do .feature-container {
+  @include bp-up(lg) {
+    &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+      .featured-item {
+        min-height: 420px;
+      }
+    }
+  }
+}
+
+.post.style-2 .post-desc {
+  bottom: auto;
+  top: 10;
+}
+
+.post.style-2.active .post-desc, .post.style-2:hover .post-desc {
+  bottom: auto;
+  top: 0;
 }
