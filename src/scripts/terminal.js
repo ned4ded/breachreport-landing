@@ -1,4 +1,23 @@
 $( document ).ready(function () {
+  const getOffset = () => {
+    const height = $( window ).height()
+
+    return (height * .3) + 80
+  }
+
+  const resetBodyScrollspy = () => {
+    $('body').scrollspy('dispose')
+
+    $('body').scrollspy({
+      offset: getOffset(),
+      target: '.navbar'
+    })
+  }
+
+  resetBodyScrollspy()
+
+  $( window ).scroll(resetBodyScrollspy)
+
   const formatter = {
     comma: (num) => Math.round(num).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'),
     billion: (n) => {
@@ -16,7 +35,6 @@ $( document ).ready(function () {
 
       return num.replace(/(\d)(?=(\d{2})+(?!\d))/g, '$1.')
     },
-
   }
 
   $('[data-toggle="popover"]').popover()
@@ -27,10 +45,14 @@ $( document ).ready(function () {
 
     const { [formatterName]:formatterFn } = formatter
 
+    const repeat = $el.data('repeat') || false
+
     $el.countTo({
       formatter: formatterFn,
       refreshInterval: 2,
       onComplete: function() {
+        if(!repeat) return
+
         setTimeout(() => {
           count(this)
 

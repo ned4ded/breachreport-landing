@@ -22,11 +22,11 @@
   {
     "name" : "news",
     "_name" : "news",
-    "ref" : "//news.breachreport.com"
+    "ref" : "//breachreport.com/news/"
   },
   {
     "name" : "portal",
     "_name" : "portal",
-    "ref" : "//portal.breachreport.com"
+    "ref" : "//breachreport.com/portal/"
   }
 ]
