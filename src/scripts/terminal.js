@@ -64,14 +64,12 @@ $( document ).ready(function () {
 
   $('[data-count-number]').each((i, e) => count(e))
 
-  const $modalEmail = $('#get-for-free-modal').find('[type="email"]')
+  const $modalForm = $('#get-for-free-modal').find('form')
   const $modalNote = $('#get-for-free-modal').find('[data-form-note]')
 
-  $modalEmail.on('input', function(...args) {
-    if(this.value !== '') {
-      if(!$modalNote.hasClass('active')) $modalNote.addClass('active')
-    } else {
-      $modalNote.removeClass('active')
-    }
+  $modalForm.on('submit', function(e) {
+    e.preventDefault()
+
+    $modalNote.addClass('active')
   })
 })
