@@ -95,12 +95,24 @@
   }
 }
 
-.post.style-2 .post-desc {
-  bottom: auto;
-  top: 10;
+#get-for-free-modal .featured-item {
+  &::after {
+    background: none;
+  }
+
+  &.style-2:hover a {
+    color: white;
+  }
 }
 
-.post.style-2.active .post-desc, .post.style-2:hover .post-desc {
-  bottom: auto;
-  top: 0;
+#about {
+  .post.style-2 .post-desc {
+    bottom: auto;
+    top: 10;
+  }
+
+  .post.style-2.active .post-desc, .post.style-2:hover .post-desc {
+    bottom: auto;
+    top: 0;
+  }
 }
