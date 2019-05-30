@@ -7,9 +7,12 @@
 @import "../../../../lib/themes/softino/scss/theme/variables.scss";
 @import "../../../../lib/themes/softino/scss/theme/mixins.scss";
 
+
 @import "../../../../lib/themes/softino/scss/base.scss";
 @import "../../../../lib/themes/softino/scss/style.scss";
 @import "../../../../lib/themes/softino/scss/responsive.scss";
+
+@import "../../../../lib/themes/softino/scss/theme-color/color-5.scss";
 
 .logo img,
 #header-wrap.fixed-header .logo img {
@@ -97,7 +100,7 @@
     &:nth-child(9) {
       .featured-item {
         color: white;
-        background: linear-gradient(180deg,rgb(0, 91, 234) 0,rgb(37, 117, 252) 80%);
+        background: linear-gradient(180deg,$theme-color 0,$theme-color2 80%);
 
         &:hover p {
           color: white;
