@@ -1,4 +1,16 @@
 $( document ).ready(function () {
+  const $links = $('[data-animate-scroll]')
+
+  $links.on('click', function(e) {
+    e.preventDefault()
+
+    const target = $(`${this.hash}`)
+
+    const { top } = target.offset()
+
+    $('body, html').animate({ scrollTop: top }, 500)
+  })
+
   const getOffset = () => {
     const height = $( window ).height()
 
@@ -16,7 +28,7 @@ $( document ).ready(function () {
 
   resetBodyScrollspy()
 
-  $( window ).scroll(resetBodyScrollspy)
+  $( window ).resize(resetBodyScrollspy)
 
   const formatter = {
     comma: (num) => Math.round(num).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'),
