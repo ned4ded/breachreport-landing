@@ -12,7 +12,7 @@
 @import "../../../../lib/themes/softino/scss/style.scss";
 @import "../../../../lib/themes/softino/scss/responsive.scss";
 
-@import "../../../../lib/themes/softino/scss/theme-color/color-5.scss";
+// @import "../../../../lib/themes/softino/scss/theme-color/color-5.scss";
 
 .logo img,
 #header-wrap.fixed-header .logo img {
@@ -157,5 +157,45 @@
 #home {
   #mc-form input[type="email"] {
     font-size: 15px;
+  }
+}
+
+.navbar-nav .nav-item .nav-link.active::before {
+    color: rgb(5, 248, 161);
+}
+
+.post-title::after {
+    background-color: rgb(5, 248, 161);
+}
+
+.post-title::before {
+    background-color: rgb(46, 199, 141);
+}
+
+.box-loader span {
+    background-color: rgb(5, 248, 161);
+}
+
+.price-list li i {
+  color: rgb(5, 248, 161);
+}
+
+.factoid {
+  position: relative;
+
+  padding-left: 20px;
+
+  &:before {
+    position: absolute;
+    top: 7px;
+    left: 0;
+
+    width: 8px;
+    height: 8px;
+
+    content: '';
+
+    border-radius: 100%;
+    background-color: #005bea;
   }
 }
