@@ -82,6 +82,10 @@
 
 #what-we-do .featured-item {
   min-height: 430px;
+
+  &:after {
+    background: none;
+  }
 }
 
 #what-we-do .feature-container {
