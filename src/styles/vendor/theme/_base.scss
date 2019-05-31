@@ -203,3 +203,13 @@
 .facts {
   min-height: 650px;
 }
+
+.text-theme-contrast {
+  color: rgb(5, 248, 161);
+}
+
+#home {
+  u {
+    text-decoration-color: $theme-color;
+  }
+}
