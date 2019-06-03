@@ -191,7 +191,7 @@
 
   &:before {
     position: absolute;
-    top: 7px;
+    top: 10px;
     left: 0;
 
     width: 8px;
@@ -220,4 +220,10 @@
 
 .img-fluid {
   max-height: 600px;
+}
+
+#about, #about-factoids {
+  p {
+    font-size: 1.25rem;
+  }
 }
