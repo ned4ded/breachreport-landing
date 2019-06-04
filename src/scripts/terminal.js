@@ -1,14 +1,32 @@
 $( document ).ready(function () {
+  const animateScrollByID = (id) => {
+    const target = $(`${id}`)
+
+    const { top } = target.offset()
+
+    $('body, html').animate({ scrollTop: top }, 500)
+  }
+
   const $links = $('[data-animate-scroll]')
 
   $links.on('click', function(e) {
     e.preventDefault()
 
-    const target = $(`${this.hash}`)
+    animateScrollByID(this.hash)
+  })
 
-    const { top } = target.offset()
+  const $modalLinks = $('[data-modal-animate-scroll]')
 
-    $('body, html').animate({ scrollTop: top }, 500)
+  $modalLinks.click(function(e) {
+    e.preventDefault()
+
+    const $modal = $( this ).parents('.modal')
+
+    const animate = () => animateScrollByID(this.hash)
+
+    $modal.one('hidden.bs.modal', animate)
+
+    $modal.modal('hide')
   })
 
   const getOffset = () => {

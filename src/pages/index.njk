@@ -2,6 +2,8 @@
 
 {% block content %}
 
+{% include "partials/header-index.njk" %}
+
 {% include "partials/home.njk" %}
 
 <div class="page-content">
@@ -22,6 +24,9 @@
 
 {% include "partials/get-for-free-modal.njk" %}
 
+{% include "partials/no-purchase-notification-modal.njk" %}
+
 {% include "partials/cookie-policy-modal.njk" %}
+
 
 {% endblock %}
