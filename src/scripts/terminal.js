@@ -84,4 +84,50 @@ $( document ).ready(function () {
 
     $modalNote.addClass('active')
   })
+
+  const $homeForm = $('#home').find('form')
+  const $homeNote = $('#home').find('[data-form-note]')
+
+  $homeForm.on('submit', function(e) {
+    e.preventDefault()
+
+    $homeNote.addClass('active')
+  })
+
+  const COOKIE_POLICY_NAME = 'br-cookie-policy-accepted'
+
+  const cookies = decodeURIComponent(document.cookie)
+    .split(';')
+    .map(s => s.trim())
+    .reduce((acc, c) => {
+      const firstEqSignIndex = c.search('=')
+
+      const name = c.slice(0, firstEqSignIndex)
+      const value = c.slice(firstEqSignIndex + 1, c.length)
+
+      return { ...acc, [name] : value }
+    }, {})
+
+    const { [COOKIE_POLICY_NAME] : cookie } = cookies
+
+    if(!cookie || cookie !== 'true') {
+      const $cookieModal = $('#cookie-policy-modal').modal({
+        backdrop: 'static',
+        keyboard: false,
+        show: false
+      })
+
+      const $acceptBtn = $cookieModal.find('[data-accept-btn]')
+
+      $acceptBtn.click(function(ev) {
+        ev.preventDefault()
+
+        document.cookie = `${COOKIE_POLICY_NAME}=true`
+
+        $cookieModal.modal('hide')
+      })
+
+      $cookieModal.modal('show')
+    }
+
 })
