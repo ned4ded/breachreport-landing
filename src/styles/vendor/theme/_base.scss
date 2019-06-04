@@ -218,6 +218,20 @@
   u {
     text-decoration-color: $theme-color;
   }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-size: 4rem;
+  }
+
+  .arrow-container {
+    min-height: 4rem;
+  }
 }
 
 .img-fluid {
