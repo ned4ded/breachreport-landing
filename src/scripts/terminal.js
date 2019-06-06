@@ -126,26 +126,36 @@ $( document ).ready(function () {
       return { ...acc, [name] : value }
     }, {})
 
-    const { [COOKIE_POLICY_NAME] : cookie } = cookies
+  const { [COOKIE_POLICY_NAME] : cookie } = cookies
 
-    if(!cookie || cookie !== 'true') {
-      const $cookieModal = $('#cookie-policy-modal').modal({
-        backdrop: 'static',
-        keyboard: false,
-        show: false
-      })
+  if(!cookie || cookie !== 'true') {
+    const $toast = $('#cookie-policy-toast').toast({
+      autohide: false,
+      delay: 0
+    })
 
-      const $acceptBtn = $cookieModal.find('[data-accept-btn]')
+    const $acceptBtn = $toast.find('[data-accept-btn]')
 
-      $acceptBtn.click(function(ev) {
-        ev.preventDefault()
+    $acceptBtn.click(function(ev) {
+      ev.preventDefault()
 
-        document.cookie = `${COOKIE_POLICY_NAME}=true`
+      document.cookie = `${COOKIE_POLICY_NAME}=true`
 
-        $cookieModal.modal('hide')
-      })
+      $toast.toast('hide')
+    })
 
-      $cookieModal.modal('show')
-    }
+    $toast.toast('show')
+  }
 
+  const $subscribeForm = $('#subscription').find('form')
+
+  const $subscribeAfter = $('#subscription').find('[data-after-subscription]')
+
+  $subscribeForm.submit(function(e) {
+    e.preventDefault()
+
+    $subscribeForm.fadeOut(1000, function() {
+      $subscribeAfter.fadeIn(100)
+    })
+  })
 })

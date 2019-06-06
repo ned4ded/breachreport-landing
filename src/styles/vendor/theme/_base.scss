@@ -127,7 +127,7 @@
 }
 
 #get-for-free-modal,
-#cookie-policy-modal {
+#cookie-policy-toast {
   .featured-item {
     &::after {
       background: none;
@@ -263,4 +263,27 @@
 #cookie-policy {
   padding-top: 100px;
   margin-top: -100px;
+}
+
+.accordion .card a:hover,
+.accordion .card.active a {
+    background: transparent;
+    color: $theme-color;
+}
+
+.accordion .card .card-header a:hover,
+.accordion .card.active .card-header a {
+    background: rgb(37, 117, 252);
+    color: rgb(255, 255, 255);
+}
+
+#cookie-policy-toast {
+  position: fixed;
+  bottom: 0;
+  right: 10px;
+  z-index: 1300;
+
+  .toast-body {
+    padding: 0;
+  }
 }
