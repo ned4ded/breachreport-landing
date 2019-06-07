@@ -1,4 +1,6 @@
 {% set m = datasets.get('meta') %}
+{% set build = false %}
+{% set url = ('/assets/' if build else '') %}
 
 <!doctype html>
 <html class="no-js" lang="{{ m.lang }}">
@@ -15,17 +17,17 @@
   <meta property="og:url" content="{{ m.og.url }}" />
   <meta property="og:site_name" content="{{ m.og.site_name }}" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="{{ m.og.url + '/assets/imgs/breachreport-og-logotype@1200x630.png' }}" />
+  <meta property="og:image" content="{{ m.og.url + url + 'assets/imgs/breachreport-og-logotype@1200x630.png' }}" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:description" content="{{ m.og.descr }}" />
   {% endif %}
 
   {% if m.favicon %}
-  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="shortcut icon" href="{{ url + 'favicon.ico' }}">
   {% endif %}
 
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="{{ url + 'css/main.css' }}">
 </head>
 
 <body class="position-relative">
@@ -37,25 +39,26 @@
 
   {% block content %} {% endblock %}
 
-  <script src="js/vendor.js" charset="utf-8"></script>
-  <script src="js/jquery.3.3.1.min.js" charset="utf-8"></script>
-  <script src="js/popper.min.js" charset="utf-8"></script>
-  <script src="js/bootstrap.min.js" charset="utf-8"></script>
-  <script src="js/jquery.appear.js" charset="utf-8"></script>
-  <script src="js/modernizr.js" charset="utf-8"></script>
-  <script src="js/jquery.easing.min.js" charset="utf-8"></script>
-  <script src="js/menu/jquery.smartmenus.js" charset="utf-8"></script>
-  <script src="js/owl-carousel/owl.carousel.min.js" charset="utf-8"></script>
-  <script src="js/magnific-popup/jquery.magnific-popup.min.js" charset="utf-8"></script>
-  <script src="js/counter/counter.js" charset="utf-8"></script>
-  <script src="js/countdown/jquery.countdown.min.js" charset="utf-8"></script>
-  <script src="js/contact-form/contact-form.js" charset="utf-8"></script>
-  <script src="js/contact-form/jquery.validate.min.js" charset="utf-8"></script>
+  <script src="{{ url + 'js/vendor.js'}}" charset="utf-8"></script>
+  <script src="{{ url + 'js/jquery.3.3.1.min.js'}}" charset="utf-8"></script>
+  <script src="{{ url + 'js/popper.min.js'}}" charset="utf-8"></script>
+  <script src="{{ url + 'js/bootstrap.min.js'}}" charset="utf-8"></script>
+  <script src="{{ url + 'js/jquery.appear.js'}}" charset="utf-8"></script>
+  <script src="{{ url + 'js/modernizr.js'}}" charset="utf-8"></script>
+  <script src="{{ url + 'js/jquery.easing.min.js'}}" charset="utf-8"></script>
+  <script src="{{ url + 'js/menu/jquery.smartmenus.js'}}" charset="utf-8"></script>
+  <script src="{{ url + 'js/owl-carousel/owl.carousel.min.js'}}" charset="utf-8"></script>
+  <script src="{{ url + 'js/magnific-popup/jquery.magnific-popup.min.js'}}" charset="utf-8"></script>
+  <script src="{{ url + 'js/counter/counter.js'}}" charset="utf-8"></script>
+  <script src="{{ url + 'js/countdown/jquery.countdown.min.js'}}" charset="utf-8"></script>
+  <script src="{{ url + 'js/contact-form/contact-form.js'}}" charset="utf-8"></script>
+  <script src="{{ url + 'js/contact-form/jquery.validate.min.js'}}" charset="utf-8"></script>
   {# <script src="https://maps.googleapis.com/maps/api/js"></script> #}
-  {# <script src="js/map.js" charset="utf-8"></script> #}
-  <script src="js/wow.min.js" charset="utf-8"></script>
-  <script src="js/theme-script.js" charset="utf-8"></script>
-  <script src="js/main.js" charset="utf-8"></script>
+  {# <script src="{{ url + '
+'}}" charset="utf-8"></script> #}
+  <script src="{{ url + 'js/wow.min.js'}}" charset="utf-8"></script>
+  <script src="{{ url + 'js/theme-script.js'}}" charset="utf-8"></script>
+  <script src="{{ url + 'js/main.js'}}" charset="utf-8"></script>
 
 </body>
 

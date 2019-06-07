@@ -95,21 +95,89 @@ $( document ).ready(function () {
   $('[data-count-number]').each((i, e) => count(e))
 
   const $modalForm = $('#get-for-free-modal').find('form')
-  const $modalNote = $('#get-for-free-modal').find('[data-form-note]')
+  const $modalNote = $('#get-for-free-modal').find('[data-form-note="success"]')
+  const $modalError = $('#get-for-free-modal').find('[data-form-note="error"]')
+  const $modalExist= $('#get-for-free-modal').find('[data-form-note="exist"]')
 
   $modalForm.on('submit', function(e) {
     e.preventDefault()
 
-    $modalNote.addClass('active')
+    const { value: email } = $(this).serializeArray().find(({ name }) => name == 'search')
+
+    $modalNote.hide()
+    $modalError.hide()
+    $modalExist.hide()
+
+    $.ajax('/portal/api/v1/send-results/', {
+      data: {
+        emailAddress: email
+      },
+      type: 'POST'
+    })
+    .done(function() {
+      $modalNote.show()
+      $modalNote.addClass('active')
+    })
+    .fail(function(res) {
+      const code = (() => {
+        if(!res.responseJSON) return false
+
+        const { responseJSON:{ code: result } } = res
+
+        return result
+      })()
+
+      if(code == 'ACCOUNT_ALREADY_CREATED') {
+        $modalExist.show()
+        $modalExist.addClass('active')
+      } else {
+        $modalError.show()
+        $modalError.addClass('active')
+      }
+    })
   })
 
   const $homeForm = $('#home').find('form')
-  const $homeNote = $('#home').find('[data-form-note]')
+  const $homeNote = $('#home').find('[data-form-note="success"]')
+  const $homeError = $('#home').find('[data-form-note="error"]')
+  const $homeExist= $('#home').find('[data-form-note="exist"]')
 
   $homeForm.on('submit', function(e) {
     e.preventDefault()
 
-    $homeNote.addClass('active')
+    const { value: email } = $(this).serializeArray().find(({ name }) => name == 'search')
+
+    $homeNote.hide()
+    $homeError.hide()
+    $homeExist.hide()
+
+    $.ajax('/portal/api/v1/send-results/', {
+      data: {
+        emailAddress: email
+      },
+      type: 'POST'
+    })
+    .done(function() {
+      $homeNote.show()
+      $homeNote.addClass('active')
+    })
+    .fail(function(res) {
+      const code = (() => {
+        if(!res.responseJSON) return false
+
+        const { responseJSON:{ code: result } } = res
+
+        return result
+      })()
+
+      if(code == 'ACCOUNT_ALREADY_CREATED') {
+        $homeExist.show()
+        $homeExist.addClass('active')
+      } else {
+        $homeError.show()
+        $homeError.addClass('active')
+      }
+    })
   })
 
   const COOKIE_POLICY_NAME = 'br-cookie-policy-accepted'
@@ -149,13 +217,39 @@ $( document ).ready(function () {
 
   const $subscribeForm = $('#subscription').find('form')
 
-  const $subscribeAfter = $('#subscription').find('[data-after-subscription]')
+  const $subscribeAfter = $('#subscription').find('[data-after-subscription="success"]')
+  const $subscribeAfterError = $('#subscription').find('[data-after-subscription="error"]')
 
   $subscribeForm.submit(function(e) {
     e.preventDefault()
 
+    const { value: email } = $(this).serializeArray().find(({ name }) => name == 'EMAIL')
+
     $subscribeForm.fadeOut(1000, function() {
-      $subscribeAfter.fadeIn(100)
+      $.ajax('/portal/api/v1/newsletter-subscribe', {
+        data: {
+          email
+        },
+        type: 'POST'
+      })
+      .done(function() {
+        $subscribeAfter.fadeIn(1000)
+      })
+      .fail(function(res) {
+        $subscribeAfterError.fadeIn(1000)
+      })
     })
+  })
+
+  $('.modal').find('[data-toggle-modal="modal"]').click(function(e) {
+    e.preventDefault()
+
+    const target = $( this ).data('target')
+
+    const $parent = $( this ).parents('.modal')
+
+    $parent.on('hidden.bs.modal', () => $( target ).modal('show'))
+
+    $parent.modal('hide')
   })
 })

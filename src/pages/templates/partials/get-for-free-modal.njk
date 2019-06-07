@@ -14,11 +14,15 @@
               <input type="email" value="" name="search" class="email" placeholder="Email address" required="">
               <button class="btn btn-theme" type="submit">Verify</button>
 
-              <p data-form-note class="small mb-4 mt-1">* We sent the verification link to your mailbox. Follow the instructions from the email to access Breach Report.</p>
+              <div class="mt-2" style="min-height: 50px;">
+                <p data-form-note="success" class="small" style="display: none">* We sent the verification link to your mailbox. Follow the instructions from the email to access Breach Report.</p>
+                <p data-form-note="error" class="small text-danger" style="display: none">* Something went wrong, try again later</p>
+                <p data-form-note="exist" class="small text-warning" style="display: none">* Account with such email already exists</p>
+              </div>
             </form>
           </div>
 
-          <p class="mb-0 text-center">
+          <p class="mb-0 text-center mt-3">
             <a data-dismiss="modal" href="#" class="btn btn-dark btn-sm">Close</a>
           </p>
         </div>

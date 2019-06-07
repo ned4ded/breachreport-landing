@@ -289,3 +289,28 @@
     padding: 0;
   }
 }
+
+#home {
+  > .container {
+    padding-top: 90px;
+
+    @include bp-up(lg) {
+      padding-top: 60px;
+    }
+
+    > .row {
+      @include bp-up(lg) {
+        align-content: center;
+
+        height: calc(100vh - 60px);
+        min-height: 700px;
+      }
+    }
+  }
+}
+
+#about-factoids {
+  .step-desc p {
+    max-width: 100%;
+  }
+}
