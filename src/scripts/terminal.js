@@ -1,3 +1,5 @@
+import handleVerificationForm from './handle-verification-form'
+
 $( document ).ready(function () {
   const animateScrollByID = (id) => {
     const target = $(`${id}`)
@@ -94,91 +96,7 @@ $( document ).ready(function () {
 
   $('[data-count-number]').each((i, e) => count(e))
 
-  const $modalForm = $('#get-for-free-modal').find('form')
-  const $modalNote = $('#get-for-free-modal').find('[data-form-note="success"]')
-  const $modalError = $('#get-for-free-modal').find('[data-form-note="error"]')
-  const $modalExist= $('#get-for-free-modal').find('[data-form-note="exist"]')
-
-  $modalForm.on('submit', function(e) {
-    e.preventDefault()
-
-    const { value: email } = $(this).serializeArray().find(({ name }) => name == 'search')
-
-    $modalNote.hide()
-    $modalError.hide()
-    $modalExist.hide()
-
-    $.ajax('/portal/api/v1/send-results/', {
-      data: {
-        emailAddress: email
-      },
-      type: 'POST'
-    })
-    .done(function() {
-      $modalNote.show()
-      $modalNote.addClass('active')
-    })
-    .fail(function(res) {
-      const code = (() => {
-        if(!res.responseJSON) return false
-
-        const { responseJSON:{ code: result } } = res
-
-        return result
-      })()
-
-      if(code == 'ACCOUNT_ALREADY_CREATED') {
-        $modalExist.show()
-        $modalExist.addClass('active')
-      } else {
-        $modalError.show()
-        $modalError.addClass('active')
-      }
-    })
-  })
-
-  const $homeForm = $('#home').find('form')
-  const $homeNote = $('#home').find('[data-form-note="success"]')
-  const $homeError = $('#home').find('[data-form-note="error"]')
-  const $homeExist= $('#home').find('[data-form-note="exist"]')
-
-  $homeForm.on('submit', function(e) {
-    e.preventDefault()
-
-    const { value: email } = $(this).serializeArray().find(({ name }) => name == 'search')
-
-    $homeNote.hide()
-    $homeError.hide()
-    $homeExist.hide()
-
-    $.ajax('/portal/api/v1/send-results/', {
-      data: {
-        emailAddress: email
-      },
-      type: 'POST'
-    })
-    .done(function() {
-      $homeNote.show()
-      $homeNote.addClass('active')
-    })
-    .fail(function(res) {
-      const code = (() => {
-        if(!res.responseJSON) return false
-
-        const { responseJSON:{ code: result } } = res
-
-        return result
-      })()
-
-      if(code == 'ACCOUNT_ALREADY_CREATED') {
-        $homeExist.show()
-        $homeExist.addClass('active')
-      } else {
-        $homeError.show()
-        $homeError.addClass('active')
-      }
-    })
-  })
+  handleVerificationForm()
 
   const COOKIE_POLICY_NAME = 'br-cookie-policy-accepted'
 

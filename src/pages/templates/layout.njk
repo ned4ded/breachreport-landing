@@ -39,6 +39,67 @@
 
   {% block content %} {% endblock %}
 
+  <template data-form-verify-t="error">
+    <p class="text-center mb-2">
+      * Something went wrong, try again later.
+    </p>
+  </template>
+
+  <template data-form-verify-t="has-breaches">
+    <p class="text-center mb-2">
+      Oh no! The entered email address was found in <span data-form-verify-breaches>several breaches</span>.
+    </p>
+  </template>
+
+  <template data-form-verify-t="no-breaches">
+    <p class="text-center mb-2">
+      Congratulations! Your email wasn't found in any existing breaches.
+    </p>
+  </template>
+
+  <template data-form-verify-t="btn-fail">
+    <p class="text-center small mb-2">
+      <a href="#" class="btn btn-theme btn-sm" data-form-verify-btn>Learn more</a>
+    </p>
+  </template>
+
+  <template data-form-verify-t="btn-success">
+    <p class="text-center small mb-2">
+      <a href="#" class="btn btn-theme btn-sm" data-form-verify-btn>Notify me</a>
+    </p>
+  </template>
+
+  <template data-form-verify-t="unreg-fail">
+    <p class="text-center small mb-2">
+      * To access detailed list of breaches you are required to verify that you are the owner of this email address. We will
+      instantly send the verification link to your mailbox.
+    </p>
+  </template>
+
+  <template data-form-verify-t="unreg-success">
+    <p class="text-center small mb-2">
+      Verify your email address and we will notify you if we find your account in the future breaches.
+    </p>
+  </template>
+
+  <template data-form-verify-t="unreg-msg">
+    <p class="text-center small mb-2">
+      We sent an email with instructions on how to activate you Breach Report account.
+    </p>
+  </template>
+
+  <template data-form-verify-t="unver">
+    <p class="text-center small mb-2">
+      The account with this email address already exists. We sent the verification link to your mailbox. Follow the instructions from the email to access Breach Report.
+    </p>
+  </template>
+
+  <template data-form-verify-t="ver">
+    <p class="text-center small mb-2">
+      The account with this email address already exists. <a href="/portal/login">Click here</a> to sign in to your account.
+    </p>
+  </template>
+
   <script src="{{ url + 'js/vendor.js'}}" charset="utf-8"></script>
   <script src="{{ url + 'js/jquery.3.3.1.min.js'}}" charset="utf-8"></script>
   <script src="{{ url + 'js/popper.min.js'}}" charset="utf-8"></script>

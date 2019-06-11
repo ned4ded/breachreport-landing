@@ -9,17 +9,17 @@
           <p class="mb-2">Monitoring and Alerting of 5 email accounts</p>
           <p class="mb-5">Limited monitoring of 1 domain</p>
 
-          <div class="subscribe-form mb-1">
-            <form id="mc-form" class="group">
+          <div data-form-verify="container" class="subscribe-form mb-1">
+            <form id="mc-form" class="group" data-form-verify="form">
               <input type="email" value="" name="search" class="email" placeholder="Email address" required="">
               <button class="btn btn-theme" type="submit">Verify</button>
+            </form>
 
-              <div class="mt-2" style="min-height: 50px;">
+              <div data-form-verify="notes" class="mt-2" style="min-height: 110px;">
                 <p data-form-note="success" class="small" style="display: none">* We sent the verification link to your mailbox. Follow the instructions from the email to access Breach Report.</p>
                 <p data-form-note="error" class="small text-danger" style="display: none">* Something went wrong, try again later</p>
                 <p data-form-note="exist" class="small text-warning" style="display: none">* Account with such email already exists</p>
               </div>
-            </form>
           </div>
 
           <p class="mb-0 text-center mt-3">
