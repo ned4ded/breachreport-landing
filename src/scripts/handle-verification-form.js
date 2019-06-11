@@ -52,8 +52,8 @@ const formContentFromTemplates = templates => seq => {
 
 const formatBreachInfoElement = cnt => e => {
   const conditions = [
-    { name: 'breach', condition: cnt === 0 },
-    { name: 'breaches', condition: cnt > 0 }
+    { name: 'breach', condition: cnt === 1 },
+    { name: 'breaches', condition: cnt > 1 }
   ]
 
   const { name: noun } = conditions.find(({ condition }) => condition)
