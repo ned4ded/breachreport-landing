@@ -295,15 +295,15 @@
     padding-top: 90px;
 
     @include bp-up(lg) {
-      padding-top: 60px;
+      padding-top: 80px;
+      padding-bottom: 60px;
     }
 
     > .row {
       @include bp-up(lg) {
         align-content: center;
 
-        height: calc(100vh - 60px);
-        min-height: 700px;
+        min-height: calc(100vh - 80px);
       }
     }
   }
@@ -323,4 +323,30 @@
 
 .text-theme-success {
   color: rgb(67, 227, 38) !important;
+}
+
+@keyframes pulsate-success {
+  to {
+    text-shadow: 0px 0px 4px rgba(67, 227, 38, 1);
+  }
+}
+
+@keyframes pulsate-contrast {
+  to {
+    text-shadow: 0px 0px 4px rgba(227, 38, 65, 1);
+  }
+}
+
+.text-theme-success{
+  &.text-pulsate {
+    text-shadow: 0px 0px 1px rgba(67, 227, 38, .1);
+    animation: pulsate-success .5s infinite alternate;
+  }
+}
+
+.text-theme-contrast{
+  &.text-pulsate {
+    text-shadow: 0px 0px 1px rgba(227, 38, 65, .1);
+    animation: pulsate-contrast .5s infinite alternate;
+  }
 }
