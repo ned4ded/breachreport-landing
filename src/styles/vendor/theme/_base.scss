@@ -338,15 +338,25 @@
 }
 
 .text-theme-success{
-  &.text-pulsate {
+  &.text-pulsate,
+  &.text-pulsate * {
     text-shadow: 0px 0px 1px rgba(67, 227, 38, .1);
     animation: pulsate-success .5s infinite alternate;
   }
 }
 
 .text-theme-contrast{
-  &.text-pulsate {
+  &.text-pulsate,
+  &.text-pulsate * {
     text-shadow: 0px 0px 1px rgba(227, 38, 65, .1);
     animation: pulsate-contrast .5s infinite alternate;
+  }
+}
+
+.text-pulsate {
+  white-space: normal;
+
+  @include bp-up(lg) {
+    white-space: pre-line;
   }
 }
