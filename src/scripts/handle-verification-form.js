@@ -21,7 +21,13 @@ const Selectors = {
 
 const changeNotes = notes => (content) => {
   const $notes = $( notes )
+  const $jumbo = $notes.parents('#jumbotron-verify')
+
   const [n] = $notes.get()
+
+  if($jumbo.length) {
+    $('body, html').animate({ scrollTop: $jumbo.offset().top - 210 }, 500)
+  }
 
   $notes.fadeOut(500, function () {
     n.innerHTML = ''
@@ -81,7 +87,9 @@ export default async () => {
 
   const $container = $(Selectors.VERIFICATION_FORM_CONTAINER)
 
-  $container.each((i, e) => {
+  const email = $('#email-get').get(0)
+
+  $container.each(async (i, e) => {
     const $form = $(e).find(Selectors.VERIFICATION_FORM)
     const $notes = $(e).find(Selectors.VERIFICATION_FORM_NOTES)
     const changeCurrentNotes = changeNotes($notes)
@@ -96,14 +104,8 @@ export default async () => {
       return
     }
 
-    $form.submit(async function(e) {
-      e.preventDefault()
-
-      const { value: email } = $(this).serializeArray().find(({ name }) => name == 'search')
-
-      const { err, data: user } = await UserAccountModel.get(email)
-
-      if(err) {
+    const renderNotes = async (err, user) => {
+      if (err) {
         showErrorNote()
 
         return
@@ -112,12 +114,12 @@ export default async () => {
       const breachesInfo = user.breaches ? { name: 'hasBreaches', cb: formatBreachInfoElement(user.breaches) } : { name: 'noBreaches' }
 
       if (user.is(UserAccountTypes.UNREGISTERED)) {
-        const setEventHandler = ($parent) => $parent.find(Selectors.VERIFICATION_FORM_BTN).click(async function(e) {
+        const setEventHandler = ($parent) => $parent.find(Selectors.VERIFICATION_FORM_BTN).click(async function (e) {
           e.preventDefault()
 
           const { status } = await sendVerificationByUserEmail(user.email)
 
-          if(status !== 'success') {
+          if (status !== 'success') {
             showErrorNote()
 
             return
@@ -170,7 +172,24 @@ export default async () => {
 
         return
       }
+    }
 
+    if ($form.parents('#jumbotron-verify').length && email.dataset.email !== 'false') {
+      const { err, data: user } = await UserAccountModel.get(email.dataset.email)
+
+      $form.find('input[name="search"]').val(email.dataset.email)
+
+      renderNotes(err, user)
+    }
+
+    $form.submit(async function(e) {
+      e.preventDefault()
+
+      const { value: email } = $(this).serializeArray().find(({ name }) => name == 'search')
+
+      const { err, data: user } = await UserAccountModel.get(email)
+
+      renderNotes(err, user)
     })
   })
 }

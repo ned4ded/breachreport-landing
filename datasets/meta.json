@@ -6,9 +6,15 @@
   "favicon" : true,
   "og" : {
     "use" : true,
-    "title" : "Breach report- digital security platform",
+    "title" : "Breach report - digital security platform",
     "url" : "breachreport.com",
     "site_name" : "breachreport.com",
     "descr" : "ATO prevention and 360 degrees credentials security"
-  }
+  },
+  "title_data-donation-policy": "Data donation policy",
+  "description_data-donation-policy": "This Policy for Data Donation describes the terms and conditions that are applicable to the submission of data bases or any other content that you provide to us.",
+  "title_privacy-policy": "Privacy policy",
+  "description_privacy-policy": "This privacy policy applies solely to information collected by this web site. Breach Report is the controller and is responsible for your personal information.",
+  "title_terms-of-use": "Terms of use",
+  "description_terms-of-use": "You agree to our Terms by accessing or using any of Company’s present or future websites, services or platforms. These Terms may be amended or updated by us from time to time at our sole discretion."
 }

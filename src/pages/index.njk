@@ -35,4 +35,6 @@
 
   {% include "partials/templates.njk" %}
 
+  <template id="email-get" data-email="{{ (('{{ email }}' | escape) if build else 'false') }}"></template>
+
 {% endblock %}

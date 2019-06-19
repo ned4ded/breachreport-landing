@@ -1,5 +1,17 @@
 {% extends "layout.njk" %}
 
+{% set m = datasets.get('meta') %}
+
+{% block meta %}
+<title>{{ m['title_data-donation-policy'] }}</title>
+<meta name="description" content="{{ m['description_data-donation-policy'] }}">
+{% endblock %}
+
+{% block ogMeta %}
+<meta property="og:title" content="{{ m['title_data-donation-policy'] }}" />
+<meta property="og:description" content="{{ m['description_data-donation-policy'] }}" />
+{% endblock %}
+
 {% block content %}
 
 {% include "partials/header.njk" %}
