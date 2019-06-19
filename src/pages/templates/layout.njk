@@ -1,5 +1,5 @@
 {% set m = datasets.get('meta') %}
-{% set build = false %}
+{% set build = true %}
 {% set url = ('/assets/' if build else '') %}
 
 <!doctype html>
@@ -13,11 +13,6 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-5ZKT7GC');</script>
   <!-- End Google Tag Manager -->
-
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5ZKT7GC"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
   <meta charset="{{ m.charset }}">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -46,6 +41,11 @@
 </head>
 
 <body class="position-relative">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5ZKT7GC"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <!--[if lte IE 9]>
   <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
