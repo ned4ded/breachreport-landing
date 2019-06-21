@@ -16,7 +16,12 @@ const Selectors = {
   UNVERIFIED_USER_TEMPLATE: '[data-form-verify-t="unver"]',
   VERIFIED_USER_TEMPLATE: '[data-form-verify-t="ver"]',
   BREACHES_ANCHOR: '[data-form-verify-breaches]',
+  MSG_ANCHOR: '[data-form-verify-msg]',
   VERIFICATION_FORM_BTN: '[data-form-verify-btn]',
+}
+
+const BadRequestCodes = {
+  E_MISSING_OR_INVALID_PARAMS: 'The email was entered incorrectly. Please check and try again'
 }
 
 const changeNotes = notes => (content) => {
@@ -69,6 +74,34 @@ const formatBreachInfoElement = cnt => e => {
   const $e = $(e).find(Selectors.BREACHES_ANCHOR).text(str)
 }
 
+const validateEmailAddress = email => /\S+@\S+\.\S+/.test(email)
+
+const getUserByEmailAsync = (email) => {
+  return new Promise(async (exec) => {
+    if (!validateEmailAddress(email)) return exec({ err: new Error(BadRequestCodes.E_MISSING_OR_INVALID_PARAMS) })
+
+    const res = await UserAccountModel.get(email)
+
+    const { err, data: user, response } = res
+
+    const error = (() => {
+      if(!err) return null
+
+      try {
+        const { responseJSON: { code } } = response
+
+        return BadRequestCodes[code] ? new Error(BadRequestCodes[code]) : true
+
+      } catch (error) {
+
+        return true
+      }
+    })();
+
+    return exec({ err: error, user })
+  })
+}
+
 export default async () => {
   const templates = {
     error: $(Selectors.ERROR_TEMPLATE).prop('content'),
@@ -94,9 +127,14 @@ export default async () => {
     const $notes = $(e).find(Selectors.VERIFICATION_FORM_NOTES)
     const changeCurrentNotes = changeNotes($notes)
 
-    const showErrorNote = () => {
+    const showErrorNote = (msg = '') => {
+      const msgHandler = ($parent) => $parent.find(Selectors.MSG_ANCHOR).text(msg || '* Something went wrong, try again later.')
+
       const content = formContent([
-        { name: 'error' }
+        {
+          name: 'error',
+          ...(!!msg ? { cb: msgHandler } : {})
+        }
       ])
 
       changeCurrentNotes(content)
@@ -106,10 +144,11 @@ export default async () => {
 
     const renderNotes = async (err, user) => {
       if (err) {
-        showErrorNote()
+        showErrorNote(err.message || undefined)
 
         return
       }
+
 
       const breachesInfo = user.breaches ? { name: 'hasBreaches', cb: formatBreachInfoElement(user.breaches) } : { name: 'noBreaches' }
 
@@ -175,7 +214,7 @@ export default async () => {
     }
 
     if ($form.parents('#jumbotron-verify').length && email.dataset.email !== 'false') {
-      const { err, data: user } = await UserAccountModel.get(email.dataset.email)
+      const { err, user } = await getUserByEmailAsync(email.dataset.email)
 
       $form.find('input[name="search"]').val(email.dataset.email)
 
@@ -187,7 +226,7 @@ export default async () => {
 
       const { value: email } = $(this).serializeArray().find(({ name }) => name == 'search')
 
-      const { err, data: user } = await UserAccountModel.get(email)
+      const { err, user } = await getUserByEmailAsync(email)
 
       renderNotes(err, user)
     })
