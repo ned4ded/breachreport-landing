@@ -8,8 +8,7 @@ const Selectors = {
   ERROR_TEMPLATE: '[data-form-verify-t="error"]',
   NO_BREACHES_TEMPLATE: '[data-form-verify-t="no-breaches"]',
   HAS_BREACHES_TEMPLATE: '[data-form-verify-t="has-breaches"]',
-  UNREGISTERED_USER_BTN_FAIL: '[data-form-verify-t="btn-fail"]',
-  UNREGISTERED_USER_BTN_SUCCESS: '[data-form-verify-t="btn-success"]',
+  UNREGISTERED_USER_BTN_VERIFY: '[data-form-verify-t="btn-verify"]',
   UNREGISTERED_USER_TEMPLATE_FAIL: '[data-form-verify-t="unreg-fail"]',
   UNREGISTERED_USER_TEMPLATE_SUCCESS: '[data-form-verify-t="unreg-success"]',
   UNREGISTERED_USER_TEMPLATE_MSG: '[data-form-verify-t="unreg-msg"]',
@@ -110,8 +109,7 @@ export default async () => {
     unregFail: $(Selectors.UNREGISTERED_USER_TEMPLATE_FAIL).prop('content'),
     unregSuccess: $(Selectors.UNREGISTERED_USER_TEMPLATE_SUCCESS).prop('content'),
     unregMsg: $(Selectors.UNREGISTERED_USER_TEMPLATE_MSG).prop('content'),
-    btnSuccess: $(Selectors.UNREGISTERED_USER_BTN_SUCCESS).prop('content'),
-    btnFail: $(Selectors.UNREGISTERED_USER_BTN_FAIL).prop('content'),
+    btnVerify: $(Selectors.UNREGISTERED_USER_BTN_VERIFY).prop('content'),
     unver: $(Selectors.UNVERIFIED_USER_TEMPLATE).prop('content'),
     ver: $(Selectors.VERIFIED_USER_TEMPLATE).prop('content'),
   }
@@ -152,37 +150,9 @@ export default async () => {
 
       const breachesInfo = user.breaches ? { name: 'hasBreaches', cb: formatBreachInfoElement(user.breaches) } : { name: 'noBreaches' }
 
-      if (user.is(UserAccountTypes.UNREGISTERED)) {
-        const setEventHandler = ($parent) => $parent.find(Selectors.VERIFICATION_FORM_BTN).click(async function (e) {
-          e.preventDefault()
+      const setEventHandler = ($parent) => $parent.find(Selectors.VERIFICATION_FORM_BTN).click(async function (e) {
+        e.preventDefault()
 
-          const { status } = await sendVerificationByUserEmail(user.email)
-
-          if (status !== 'success') {
-            showErrorNote()
-
-            return
-          }
-
-          const content = formContent([
-            { name: 'unregMsg' },
-          ])
-
-          changeCurrentNotes(content)
-        })
-
-        const content = formContent([
-          breachesInfo,
-          { name: (user.breaches ? 'btnFail' : 'btnSuccess'), cb: setEventHandler },
-          { name: (user.breaches ? 'unregFail' : 'unregSuccess') }
-        ])
-
-        changeCurrentNotes(content)
-
-        return
-      }
-
-      if (user.is(UserAccountTypes.UNVERIFIED)) {
         const { status } = await sendVerificationByUserEmail(user.email)
 
         if (status !== 'success') {
@@ -192,8 +162,29 @@ export default async () => {
         }
 
         const content = formContent([
+          { name: 'unregMsg' },
+        ])
+
+        changeCurrentNotes(content)
+      })
+
+      if (user.is(UserAccountTypes.UNREGISTERED)) {
+        const content = formContent([
           breachesInfo,
-          { name: 'unver' }
+          { name: 'btnVerify', cb: setEventHandler },
+          { name: (user.breaches ? 'unregFail' : 'unregSuccess') }
+        ])
+
+        changeCurrentNotes(content)
+
+        return
+      }
+
+      if (user.is(UserAccountTypes.UNVERIFIED)) {
+        const content = formContent([
+          breachesInfo,
+          { name: 'unver' },
+          { name: 'btnVerify', cb: setEventHandler },
         ])
 
         changeCurrentNotes(content)
