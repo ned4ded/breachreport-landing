@@ -1,3 +1,3 @@
-import { join } from 'path'
+import { resolve } from 'url'
 
-export default (...paths) => join(...paths)
+export default (...paths) => resolve(...paths)
