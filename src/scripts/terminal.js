@@ -1,12 +1,12 @@
 import handleVerificationForm from './handle-verification-form'
 
 $( document ).ready(function () {
-  const animateScrollByID = (id) => {
+  const animateScrollByID = (id, offset = 0, cb = () => {}) => {
     const target = $(`${id}`)
 
     const { top } = target.offset()
 
-    $('body, html').animate({ scrollTop: top }, 500)
+    $('body, html').animate({ scrollTop: top - offset }, 500, cb)
   }
 
   const $links = $('[data-animate-scroll]')
@@ -14,7 +14,9 @@ $( document ).ready(function () {
   $links.on('click', function(e) {
     e.preventDefault()
 
-    animateScrollByID(this.hash)
+    const cb = this.hash === '#jumbotron-verify' ? () => $('#jumbotron-verify').find('input[type="email"]')[0].focus() : () => {}
+
+    animateScrollByID(this.hash, this.dataset.animateScrollOffset, cb)
   })
 
   const $modalLinks = $('[data-modal-animate-scroll]')

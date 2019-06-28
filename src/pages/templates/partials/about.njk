@@ -1,13 +1,8 @@
 <section id="about">
   <div class="container">
-    <div class="row mb-4">
+    {# <div class="row mb-4">
       <div class="col-12 text-center mb-5">
         <div class="section-title mb-2">
-          {# <div class="title-effect title-effect-2">
-            <div class="ellipse"></div>
-            <i class="la la-info"></i>
-          </div> #}
-
           <h2 class="title mb-3 text-uppercase">What is Breach Report?</h2>
         </div>
 
@@ -20,7 +15,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> #}
 
     <div class="row mb-4">
       <div class="col-12 text-center mb-4">
@@ -86,7 +81,9 @@
   </div>
 </section>
 
-<section class="py-0">
+{% include "partials/how-it-works.njk" %}
+
+{# <section class="py-0">
   <div class="container-fluid text-center dark-bg pt-5 pb-5" style='background-image: url("assets/imgs/bg/07.png");'>
     <div class="row pos-r align-items-stretch text-center">
       <div class="col-lg-3 col-12">
@@ -165,7 +162,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> #}
 
 <section id="about-factoids" class="pos-r o-hidden pt-0">
   <div class="morph-wrap">
@@ -179,14 +176,16 @@
         <img class="img-fluid" src="{{ url + 'assets/imgs/about/03.png'}}" alt="">
       </div>
       <div class="col-lg-7 col-md-12 ml-auto mt-5">
-        <h2 class="title text-uppercase mb-5">Facts on cybersecurity attacks</h2>
+        {# <h2 class="title text-uppercase mb-5">Facts on cybersecurity attacks</h2> #}
+        <h2 class="title text-uppercase mb-5">What is Breach Report?</h2>
         <div class="work-process style-2">
           {# <div class="step-num-box">
             <div class="step-icon"><span><i class="flaticon-software"></i></span>
             </div>
           </div> #}
           <div class="step-desc">
-            <p class="mb-0 factoid">By the time you finish reading this sentence, hundreds of emails will be lost, sold, or exploited</p>
+            {# <p class="mb-0 factoid">By the time you finish reading this sentence, hundreds of emails will be lost, sold, or exploited</p> #}
+            <p class="mb-0 factoid"><span class="text-theme">Breach Report</span> is a digital security platform with the largest database of breached private information, assembled from 11,000 separate datasets, holding over 9 billion compromised emails.</p>
           </div>
         </div>
         <div class="work-process style-2 mt-4">
@@ -195,36 +194,25 @@
             </div>
           </div> #}
           <div class="step-desc">
-            <p class="mb-0 factoid">On average, there has been one major data breach every day so far in 2019</p>
+            {# <p class="mb-0 factoid">On average, there has been one major data breach every day so far in 2019</p> #}
+            <p class="mb-0 factoid"><span class="text-theme">Breach Report</span> focuses on providing solutions for safe internet use, promoting cybersecurity awareness and bringing exclusive breach investigations into the spotlight.</p>
           </div>
         </div>
-        <div class="work-process style-2 mt-4">
-          {# <div class="step-num-box">
-            <div class="step-icon"><span><i class="flaticon-data"></i></span>
-            </div>
-          </div> #}
+        {# <div class="work-process style-2 mt-4">
           <div class="step-desc">
             <p class="mb-0 factoid">In 2018, business owners were 5 times more likely to suffer from a data breach than catch the flu!</p>
           </div>
         </div>
         <div class="work-process style-2 mt-4">
-          {# <div class="step-num-box">
-            <div class="step-icon"><span><i class="flaticon-software"></i></span>
-            </div>
-          </div> #}
           <div class="step-desc">
             <p class="mb-0 factoid">Small businesses lose an average of $80,000 every year in cyber attacks</p>
           </div>
         </div>
         <div class="work-process style-2 mt-4">
-          {# <div class="step-num-box">
-            <div class="step-icon"><span><i class="flaticon-software"></i></span>
-            </div>
-          </div> #}
           <div class="step-desc">
             <p class="mb-0 factoid">$12,500,000,000 - The amount of money businesses lost in 2018 due to email fraud</p>
           </div>
-        </div>
+        </div> #}
       </div>
     </div>
   </div>
