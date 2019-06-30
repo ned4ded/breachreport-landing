@@ -1,4 +1,5 @@
 import handleVerificationForm from './handle-verification-form'
+import handleUserLeave from './handle-user-leave'
 
 $( document ).ready(function () {
   const animateScrollByID = (id, offset = 0, cb = () => {}) => {
@@ -99,6 +100,8 @@ $( document ).ready(function () {
   $('[data-count-number]').each((i, e) => count(e))
 
   handleVerificationForm()
+
+  handleUserLeave()
 
   const COOKIE_POLICY_NAME = 'br-cookie-policy-accepted'
 

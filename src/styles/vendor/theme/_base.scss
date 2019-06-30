@@ -127,7 +127,8 @@
 }
 
 #get-for-free-modal,
-#cookie-policy-toast {
+#cookie-policy-toast,
+#before-close-modal {
   .featured-item {
     &::after {
       background: none;
@@ -358,5 +359,88 @@
     p:noty(.text-pulsate) {
       color: black !important;
     }
+  }
+}
+
+#mc-form .animated-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 0;
+  transition: .2s;
+
+  &__btn {
+    position: relative;
+    z-index: 1;
+    top: 0;
+    right: 0;
+  }
+
+  &:hover {
+    transform: translateX(-3px);
+  }
+
+  &__btn {
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+.animated-btn {
+  position: relative;
+  display: inline-block;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  &__btn {
+    position: relative;
+    z-index: 1;
+
+    &:hover {
+      transform: none;
+    }
+  }
+
+  @keyframes animated-btn-pulse {
+    0% {
+      width: 50%;
+      height: 50%;
+      background: $theme-color;
+    }
+
+    40% {
+      background: rgba($theme-color, .5);
+      width: calc(100% + 20px);
+      height: calc(100% + 13px);
+    }
+
+    65% {
+      background: rgba($theme-color, 0);
+      width: calc(100% + 30px);
+      height: calc(100% + 20px);
+    }
+
+    100% {
+      background: rgba($theme-color, 0);
+      width: calc(100% + 30px);
+      height: calc(100% + 20px);
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    z-index: 0;
+    animation: 1.5s linear 0s infinite normal none running animated-btn-pulse;
+    background: $theme-color;
+    z-index: 0;
+    border-radius: 14px;
+    transform: translate(-50%, -50%);
   }
 }
