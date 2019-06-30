@@ -13,7 +13,8 @@ export class ScrollVelocityMeasurer {
     this._cb = () => {}
 
     this._fn = throttle((ev) => {
-      const { timeStamp, originalEvent: { pageY } } = ev
+      const { timeStamp } = ev
+      const pageY = Math.round(window.pageYOffset)
 
       const distance = getDistanceByScrollPosition(this._pageY, pageY)
       const time = timeStamp - this._time
