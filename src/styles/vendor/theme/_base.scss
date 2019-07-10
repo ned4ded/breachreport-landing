@@ -7,7 +7,6 @@
 @import "../../../../lib/themes/softino/scss/theme/variables.scss";
 @import "../../../../lib/themes/softino/scss/theme/mixins.scss";
 
-
 @import "../../../../lib/themes/softino/scss/base.scss";
 @import "../../../../lib/themes/softino/scss/style.scss";
 @import "../../../../lib/themes/softino/scss/responsive.scss";
@@ -45,7 +44,7 @@
 .testimonial-icon {
   position: relative;
 
-  .testimonial.style-2  & {
+  .testimonial.style-2 & {
     width: 200px;
     height: 200px;
 
@@ -72,8 +71,9 @@
   }
 }
 
-.featured-item.style-2:hover, .price-table:hover {
-    box-shadow: 0 20px 50px 0 rgba(72,73,121,.3);
+.featured-item.style-2:hover,
+.price-table:hover {
+  box-shadow: 0 20px 50px 0 rgba(72, 73, 121, 0.3);
 }
 
 .featured-item.style-2:hover a {
@@ -94,8 +94,12 @@
       min-height: auto;
     }
 
-    &:nth-child(1), &:nth-child(2), &:nth-child(3),
-    &:nth-child(7), &:nth-child(8), &:nth-child(9) {
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(7),
+    &:nth-child(8),
+    &:nth-child(9) {
       .featured-item {
         min-height: 420px;
       }
@@ -108,7 +112,7 @@
   .owl-item {
     .featured-item-custom {
       color: white;
-      background: linear-gradient(180deg,$theme-color 0,$theme-color2 80%);
+      background: linear-gradient(180deg, $theme-color 0, $theme-color2 80%);
 
       &:hover p {
         color: white;
@@ -143,7 +147,7 @@
 [data-form-note] {
   transform: translateY(20px);
   opacity: 0;
-  transition: all .3s ease-out;
+  transition: all 0.3s ease-out;
 
   &.active {
     opacity: 1;
@@ -157,7 +161,8 @@
     top: 10;
   }
 
-  .post.style-2.active .post-desc, .post.style-2:hover .post-desc {
+  .post.style-2.active .post-desc,
+  .post.style-2:hover .post-desc {
     bottom: auto;
     top: 0;
   }
@@ -170,19 +175,19 @@
 }
 
 .navbar-nav .nav-item .nav-link.active::before {
-    color: rgb(5, 248, 161);
+  color: rgb(5, 248, 161);
 }
 
 .post-title::after {
-    background-color: rgb(5, 248, 161);
+  background-color: rgb(5, 248, 161);
 }
 
 .post-title::before {
-    background-color: rgb(46, 199, 141);
+  background-color: rgb(46, 199, 141);
 }
 
 .box-loader span {
-    background-color: rgb(5, 248, 161);
+  background-color: rgb(5, 248, 161);
 }
 
 .price-list li i {
@@ -204,7 +209,7 @@
     width: 8px;
     height: 8px;
 
-    content: '';
+    content: "";
 
     border-radius: 100%;
     background-color: #005bea;
@@ -221,7 +226,7 @@
 
 @keyframes arrow-animation {
   to {
-    text-shadow: 0px 0px 4px rgba(255, 255, 255, .5);
+    text-shadow: 0px 0px 4px rgba(255, 255, 255, 0.5);
     opacity: 1;
   }
 }
@@ -239,10 +244,10 @@
     transform: translate(-50%, -50%);
 
     font-size: 4rem;
-    text-shadow: 0px 0px 1px rgba(255, 255, 255, .05);
+    text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.05);
     opacity: 0;
 
-    animation: arrow-animation .5s infinite alternate;
+    animation: arrow-animation 0.5s infinite alternate;
   }
 
   .arrow-container {
@@ -270,14 +275,14 @@
 
 .accordion .card a:hover,
 .accordion .card.active a {
-    background: transparent;
-    color: $theme-color;
+  background: transparent;
+  color: $theme-color;
 }
 
 .accordion .card .card-header a:hover,
 .accordion .card.active .card-header a {
-    background: rgb(37, 117, 252);
-    color: rgb(255, 255, 255);
+  background: rgb(37, 117, 252);
+  color: rgb(255, 255, 255);
 }
 
 #cookie-policy-toast {
@@ -288,6 +293,17 @@
 
   .toast-body {
     padding: 0;
+  }
+
+  @include bp-down(sm) {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    right: auto;
+
+    .featured-item.style-2 {
+      padding: 30px 15px;
+    }
   }
 }
 
@@ -338,19 +354,19 @@
   }
 }
 
-.text-theme-success{
+.text-theme-success {
   &.text-pulsate,
   &.text-pulsate * {
-    text-shadow: 0px 0px 1px rgba(67, 227, 38, .1);
-    animation: pulsate-success .5s infinite alternate;
+    text-shadow: 0px 0px 1px rgba(67, 227, 38, 0.1);
+    animation: pulsate-success 0.5s infinite alternate;
   }
 }
 
-.text-theme-contrast{
+.text-theme-contrast {
   &.text-pulsate,
   &.text-pulsate * {
-    text-shadow: 0px 0px 1px rgba(227, 38, 65, .1);
-    animation: pulsate-contrast .5s infinite alternate;
+    text-shadow: 0px 0px 1px rgba(227, 38, 65, 0.1);
+    animation: pulsate-contrast 0.5s infinite alternate;
   }
 }
 
@@ -367,7 +383,7 @@
   top: 5px;
   right: 5px;
   z-index: 0;
-  transition: .2s;
+  transition: 0.2s;
 
   &__btn {
     position: relative;
@@ -412,7 +428,7 @@
     }
 
     40% {
-      background: rgba($theme-color, .5);
+      background: rgba($theme-color, 0.5);
       width: calc(100% + 20px);
       height: calc(100% + 13px);
     }
@@ -442,5 +458,13 @@
     z-index: 0;
     border-radius: 14px;
     transform: translate(-50%, -50%);
+  }
+}
+
+.header .animated-btn {
+  display: none;
+
+  @include bp-up(sm) {
+    display: inline-block;
   }
 }
