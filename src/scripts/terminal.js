@@ -142,6 +142,7 @@ $( document ).ready(function () {
 
   const $subscribeAfter = $('#subscription').find('[data-after-subscription="success"]')
   const $subscribeAfterError = $('#subscription').find('[data-after-subscription="error"]')
+  const subscribeStatusCodes = [409]
 
   $subscribeForm.submit(function(e) {
     e.preventDefault()
@@ -149,7 +150,7 @@ $( document ).ready(function () {
     const { value: email } = $(this).serializeArray().find(({ name }) => name == 'EMAIL')
 
     $subscribeForm.fadeOut(1000, function() {
-      $.ajax('/portal/api/v1/newsletter-subscribe', {
+      $.ajax('https://breachreport.com/portal/api/v1/newsletter-subscribe', {
         data: {
           email
         },
@@ -159,6 +160,13 @@ $( document ).ready(function () {
         $subscribeAfter.fadeIn(1000)
       })
       .fail(function(res) {
+        const { status, responseJSON } = res
+
+        if (subscribeStatusCodes.includes(Number(status)) && responseJSON && responseJSON.message) {
+          $subscribeAfterError.find('[data-after-subscription-msg]').text(responseJSON.message)
+        }
+
+        $subscribeForm.fadeIn(1000)
         $subscribeAfterError.fadeIn(1000)
       })
     })
