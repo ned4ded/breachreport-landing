@@ -1,5 +1,5 @@
 {% set m = datasets.get('meta') %}
-{% set build = false %}
+{% set build = true %}
 {% set url = ('/assets/' if build else '') %}
 
 <!doctype html>
@@ -7,47 +7,82 @@
 
 <head>
   <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-5ZKT7GC');</script>
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5ZKT7GC');</script>
   <!-- End Google Tag Manager -->
 
   <script type="text/javascript">
-    (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script")
-    ;r.type="text/javascript"
-    ;r.integrity="sha384-d/yhnowERvm+7eCU79T/bYjOiMmq4F11ElWYLmt0ktvYEVgqLDazh4+gW9CKMpYW"
-    ;r.crossOrigin="anonymous";r.async=true
-    ;r.src="https://cdn.amplitude.com/libs/amplitude-5.2.2-min.gz.js"
-    ;r.onload=function(){if(!e.amplitude.runQueuedFunctions){
-      console.log("[Amplitude] Error: could not load SDK")}}
-    ;var i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)
-    ;function s(e,t){e.prototype[t]=function(){
-      this._q.push([t].concat(Array.prototype.slice.call(arguments,0)));return this}}
-      var o=function(){this._q=[];return this}
-      ;var a=["add","append","clearAll","prepend","set","setOnce","unset"]
-      ;for(var u=0;u<a.length;u++){s(o,a[u])}n.Identify=o;var c=function(){this._q=[]
-        ;return this}
-      ;var l=["setProductId","setQuantity","setPrice","setRevenueType","setEventProperties"]
-      ;for(var p=0;p<l.length;p++){s(c,l[p])}n.Revenue=c
-      ;var d=["init","logEvent","logRevenue","setUserId","setUserProperties","setOptOut","setVersionName","setDomain","setDeviceId","setGlobalUserProperties","identify","clearUserProperties","setGroup","logRevenueV2","regenerateDeviceId","groupIdentify","onInit","logEventWithTimestamp","logEventWithGroups","setSessionId","resetSessionId"]
-      ;function v(e){function t(t){e[t]=function(){
-        e._q.push([t].concat(Array.prototype.slice.call(arguments,0)))}}
-        for(var n=0;n<d.length;n++){t(d[n])}}v(n);n.getInstance=function(e){
-        e=(!e||e.length===0?"$default_instance":e).toLowerCase()
-        ;if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]}
-      ;e.amplitude=n})(window,document);
+    (function (e, t) {
+      var n = e.amplitude || { _q: [], _iq: {} }; var r = t.createElement("script")
+        ; r.type = "text/javascript"
+        ; r.integrity = "sha384-d/yhnowERvm+7eCU79T/bYjOiMmq4F11ElWYLmt0ktvYEVgqLDazh4+gW9CKMpYW"
+        ; r.crossOrigin = "anonymous"; r.async = true
+        ; r.src = "https://cdn.amplitude.com/libs/amplitude-5.2.2-min.gz.js"
+        ; r.onload = function () {
+          if (!e.amplitude.runQueuedFunctions) {
+            console.log("[Amplitude] Error: could not load SDK")
+          }
+        }
+        ; var i = t.getElementsByTagName("script")[0]; i.parentNode.insertBefore(r, i)
+        ; function s(e, t) {
+          e.prototype[t] = function () {
+            this._q.push([t].concat(Array.prototype.slice.call(arguments, 0))); return this
+          }
+        }
+      var o = function () { this._q = []; return this }
+        ; var a = ["add", "append", "clearAll", "prepend", "set", "setOnce", "unset"]
+        ; for (var u = 0; u < a.length; u++) { s(o, a[u]) } n.Identify = o; var c = function () {
+          this._q = []
+            ; return this
+        }
+        ; var l = ["setProductId", "setQuantity", "setPrice", "setRevenueType", "setEventProperties"]
+        ; for (var p = 0; p < l.length; p++) { s(c, l[p]) } n.Revenue = c
+        ; var d = ["init", "logEvent", "logRevenue", "setUserId", "setUserProperties", "setOptOut", "setVersionName", "setDomain", "setDeviceId", "setGlobalUserProperties", "identify", "clearUserProperties", "setGroup", "logRevenueV2", "regenerateDeviceId", "groupIdentify", "onInit", "logEventWithTimestamp", "logEventWithGroups", "setSessionId", "resetSessionId"]
+        ; function v(e) {
+          function t(t) {
+            e[t] = function () {
+              e._q.push([t].concat(Array.prototype.slice.call(arguments, 0)))
+            }
+          }
+          for (var n = 0; n < d.length; n++) { t(d[n]) }
+        } v(n); n.getInstance = function (e) {
+          e = (!e || e.length === 0 ? "$default_instance" : e).toLowerCase()
+            ; if (!n._iq.hasOwnProperty(e)) { n._iq[e] = { _q: [] }; v(n._iq[e]) } return n._iq[e]
+        }
+        ; e.amplitude = n
+    })(window, document);
 
     const amplitudeBRProject = amplitude.getInstance()
 
     amplitudeBRProject.init(
       '2a7a67236bf276d7c8ac939661c375fc',
       null, {
-      includeUtm: true,
-      includeReferrer: true,
-      includeGclid: true,
-    });
+        includeUtm: true,
+        includeReferrer: true,
+        includeGclid: true,
+      });
+  </script>
+
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '517245605730626');
+    fbq('track', 'PageView');
   </script>
 
   <meta charset="{{ m.charset }}">
@@ -63,17 +98,17 @@
   <meta name="yandex-verification" content="e75a54f122ba73cc" />
   <meta name="google-site-verification" content="v847whPcxGMQJq90MRp3iN8Ir3J-4yFnue9QJ12Z7ps" />
   {% if m.og.use == true %}
-    <meta property="og:url" content="{{ m.og.url }}" />
-    <meta property="og:site_name" content="{{ m.og.site_name }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="{{ m.og.url + url + 'assets/imgs/breachreport-og-logotype@1200x630.png' }}" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="{{ m.og.url }}" />
+  <meta property="og:site_name" content="{{ m.og.site_name }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="{{ m.og.url + url + 'assets/imgs/breachreport-og-logotype@1200x630.png' }}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
-    {% block ogMeta %}
-    <meta property="og:title" content="{{ m.og.title }}" />
-    <meta property="og:description" content="{{ m.og.descr }}" />
-    {% endblock %}
+  {% block ogMeta %}
+  <meta property="og:title" content="{{ m.og.title }}" />
+  <meta property="og:description" content="{{ m.og.descr }}" />
+  {% endblock %}
   {% endif %}
 
   {% if m.favicon %}
@@ -85,8 +120,8 @@
 
 <body class="position-relative">
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5ZKT7GC"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5ZKT7GC" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
   <!--[if lte IE 9]>
@@ -98,6 +133,11 @@
   {% block content %} {% endblock %}
 
   {% block templates %} {% endblock %}
+
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=517245605730626&ev=PageView&noscript=1" />
+  </noscript>
 
   <script src="{{ url + 'js/vendor.js'}}" charset="utf-8"></script>
   <script src="{{ url + 'js/jquery.3.3.1.min.js'}}" charset="utf-8"></script>
