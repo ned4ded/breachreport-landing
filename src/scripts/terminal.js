@@ -149,6 +149,8 @@ $( document ).ready(function () {
   $subscribeForm.submit(function(e) {
     e.preventDefault()
 
+    ga('send', 'event', 'Subscribe', 'send')
+
     const { value: email } = $(this).serializeArray().find(({ name }) => name == 'EMAIL')
 
     $subscribeForm.fadeOut(1000, function() {
@@ -189,4 +191,8 @@ $( document ).ready(function () {
   calculateHiddenElementsHeight()
 
   runChartJs()
+
+  $('.btn-purchase').click(function(e) {
+    ga('send', 'event', 'Purchase Now', 'click')
+  })
 })
