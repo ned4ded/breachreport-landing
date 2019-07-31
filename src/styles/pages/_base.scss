@@ -10,9 +10,171 @@
       @include bp-up(md) {
         min-height: 220px;
       }
-
       @include bp-up(xl) {
         min-height: 175px;
+      }
+    }
+  }
+}
+
+.page-report {
+  $p: 23px;
+  $color: #e3063f;
+
+  min-height: 100vh;
+  padding: $p;
+  padding-top: 65px + $p;
+
+  background-color: theme-color("dark");
+
+  &-content {
+    border-radius: 4.5px;
+    background-color: $white;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, .15);
+  }
+
+  &-container {
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    &-stats {
+      padding-top: 37px;
+      padding-bottom: 37px;
+
+      box-shadow: inset 0 0 30px 0 rgba(0, 0, 0, .15);
+    }
+  }
+
+  &-domain {
+    max-width: 400px;
+  }
+
+  &-breaches {
+    $fz-bg: 187px;
+
+    position: relative;
+    left: -.125em;
+
+    margin-bottom: -.3em;
+
+    color: $color;
+
+    font-size: 78px / 980px * 100vw;
+    line-height: 1;
+
+    @include bp-up(lg) {
+      font-size: 78px;
+    }
+
+    &-cnt {
+      position: relative;
+
+      font-size: $fz-bg / 980px * 100vw;
+
+      @include bp-up(lg) {
+        font-size: $fz-bg;
+      }
+    }
+
+    &-icon {
+      $width: (33.5px / $fz-bg) * 1em;
+      $height: (64.5px / $fz-bg) * 1em;
+
+      position: absolute;
+      top: .338em;
+      left: calc(100% + .05em);
+
+      width: $width;
+      height: $height;
+
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: $width $height;
+    }
+
+    &-caption {
+      margin-bottom: 23px;
+
+      color: $color;
+
+      font-size: 27px;
+      line-height: 1;
+    }
+
+    &-link {
+      position: relative;
+
+      &-icon {
+        position: relative;
+        top: 2px;
+
+        display: inline-block;
+
+        width: 12px;
+        height: 12px;
+        margin-left: 4px;
+
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 12px;
+      }
+
+      a {
+        text-decoration: underline;
+
+        color: #5a7dff;
+      }
+    }
+  }
+
+  &-stats {
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+
+    @include bp-up(lg) {
+      flex-flow: row nowrap;
+    }
+
+    &-block {
+      width: 100%;
+      margin-bottom: 15px;
+
+      box-shadow: 0px 2px 20px 0 rgba(23, 24, 32, .2);
+
+      @include bp-up(lg) {
+        width: 25.35%;
+        margin-bottom: 0;
+      }
+
+      &:nth-child(3) {
+        @include bp-up(lg) {
+          width: 29.56%;
+        }
+      }
+
+      &:nth-child(4) {
+        max-width: 200px;
+        margin-right: auto;
+        margin-left: auto;
+
+        box-shadow: none;
+
+        @include bp-up(lg) {
+          width: 13.45%;
+          margin-right: 0;
+          margin-left: 0;
+        }
+      }
+
+      img {
+        display: block;
+
+        width: 100%;
+        height: auto;
       }
     }
   }

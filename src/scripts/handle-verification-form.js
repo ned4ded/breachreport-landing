@@ -24,7 +24,7 @@ const BadRequestCodes = {
 }
 
 const changeNotes = notes => (content) => {
-  const $notes = $( notes )
+  const $notes = $(notes)
   const $jumbo = $notes.parents('#jumbotron-verify')
 
   const [n] = $notes.get()
@@ -36,7 +36,11 @@ const changeNotes = notes => (content) => {
   $notes.fadeOut(500, function () {
     n.innerHTML = ''
 
-    $notes.append( content )
+    $notes.append(content)
+
+    if (!$jumbo.length) {
+      $notes.find('.text-white').removeClass('text-white')
+    }
 
     $notes.fadeIn(500)
   })

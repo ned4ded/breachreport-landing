@@ -27,6 +27,6 @@
   {
     "name" : "portal",
     "_name" : "portal",
-    "ref" : "//breachreport.com/portal/signup"
+    "ref" : "//breachreport.com/portal/login"
   }
 ]
