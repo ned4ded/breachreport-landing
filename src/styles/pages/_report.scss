@@ -1,0 +1,90 @@
+.page-report {
+  $p: 23px;
+  $color: #15173d;
+
+  min-height: 100vh;
+  padding-top: 65px;
+  padding-bottom: $p;
+
+  &-content {
+    padding-top: $p;
+    padding-right: $p;
+    padding-left: $p;
+
+    border-top: 2px solid #1a222d;
+  }
+
+  &-box {
+    &:not(:first-child) {
+      padding-top: 35px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+      padding-bottom: 35px;
+
+      border-bottom: 2px solid gray("200");
+    }
+
+    &-content {
+      @include bp-up(md) {
+        padding-right: 30px;
+        padding-left: 30px;
+      }
+      @include bp-up(xl) {
+        padding-right: 60px;
+        padding-left: 60px;
+      }
+    }
+  }
+
+  &-heading {
+    margin-bottom: 25px;
+
+    letter-spacing: .7px;
+    text-transform: uppercase;
+
+    color: $color;
+
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1;
+  }
+
+  &-domain {
+    @include bp-up(xl) {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    &-info {
+      max-width: 415px;
+      margin: 0 auto;
+
+      & .domain-info {
+        display: none;
+
+        @include bp-up(xl) {
+          display: block;
+        }
+      }
+    }
+
+    &-text,
+    &-heading {
+      color: #010101;
+
+      font-size: 14px;
+      line-height: 1.43;
+    }
+
+    &-text {
+      margin-bottom: 0;
+    }
+
+    &-heading {
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+  }
+}

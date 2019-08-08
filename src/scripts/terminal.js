@@ -2,6 +2,7 @@ import handleVerificationForm from './handle-verification-form'
 import handleUserLeave from './handle-user-leave'
 import calculateHiddenElementsHeight from './calculate-hidden-elements-height'
 import runChartJs from './chart'
+import runTimeline from './timeline'
 
 $( document ).ready(function () {
   const animateScrollByID = (id, offset = 0, cb = () => {}) => {
@@ -191,6 +192,8 @@ $( document ).ready(function () {
   calculateHiddenElementsHeight()
 
   runChartJs()
+
+  runTimeline()
 
   $('.btn-purchase').click(function(e) {
     ga('send', 'event', 'Purchase Now', 'click')

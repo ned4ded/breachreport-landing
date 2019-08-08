@@ -1,129 +1,77 @@
 {% extends "layout.njk" %}
 
+{% import "blocks/domain.njk" as domain %}
+
 {% block content %}
 
 {% include "partials/header.njk" %}
 
 <div class="page-content page-report">
-  <div class="container page-report-content">
-    <div class="row page-report-container">
-      <div class="col-12">
-        <h2 class="domain-heading">
-          <i class="domain-heading-icon"
-            style="background-image: url({{ url + 'assets/imgs/report-krypton-favicon.png'}});"></i>krypton.moscow
-        </h2>
+  <div class="page-report-content">
+    <div class="container page-report-box">
+      <div class="row">
+        <div class="col-12">
+          {% include "partials/report-domain.njk" %}
+        </div>
       </div>
+    </div>
 
-      <div class="col-12 col-lg-6">
-        <div class="page-report-domain domain">
-          <img class="domain-img" src="{{ url + 'assets/imgs/report-krypton-preview.jpg'}}" alt="Krypton Website Preview" width="400">
+    <div class="container page-report-box">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="page-report-heading">
+            Breaches affecting britishairways.com
+          </h2>
+        </div>
 
-          <div class="domain-info">
-            <input id="domain-info" type="checkbox" hidden>
+        <div class="col-12 col-md-6">
+          <p class="text-center small font-weight-bold">
+            Timeline of breaches
+          </p>
 
-            <div class="domain-info-content" data-calculate-height>
-              <div class="row">
-                <div class="col-6 mb-3">
-                  <h3 class="domain-info-heading">
-                    SSL grade
-                  </h3>
-
-                  <p class="domain-info-text mb-0">
-                    <a
-                      href="//www.ssllabs.com/ssltest/analyze.html?d=krypton.moscow">https://www.ssllabs.com/ssltest/analyze.html?d=krypton.moscow</a>
-                  </p>
-                </div>
-
-                <div class="col-6 mb-3">
-                  <h3 class="domain-info-heading">
-                    IPs and open ports
-                  </h3>
-
-                  <p class="domain-info-text mb-0 text-justify">
-                    Nmap scan report for krypton.moscow (62.77.152.49)
-                  </p>
-                </div>
-
-                {% set info_one = [
-                  'Registrant Name: Marina Kobyakova',
-                  'Registrant Organization: Kripton, LLC',
-                  'Registrant Street: Bolshaya Novodmitrovskaya, d. 36, str 12',
-                  'Registrant City: Moskva',
-                  'Registrant State/Province:',
-                  'Registrant Postal Code: 127015',
-                  'Registrant Country: RU',
-                  'Registrant Phone: +7.9031383289',
-                  'Registrant Phone Ext:',
-                  'Registrant Fax:',
-                  'Registrant Fax Ext:',
-                  'Registrant Email: mk@jury.online'] %}
-                <div class="col-6 mb-0">
-                  <h3 class="domain-info-heading">
-                    whois contacts
-                  </h3>
-
-                  {% for item in info_one %}
-                  <p
-                    class="domain-info-text text-justify{{ ' mb-0' if loop.index == info_one.length else ' mb-1'}}">
-                    {{ item }}
-                  </p>
-                  {% endfor %}
-                </div>
-
-                <div class="col-6 mb-0">
-                  {% set info_two = [
-                    ';; ANSWER SECTION: krypton.moscow. 15107 IN A 62.77.152.49',
-                    ';; AUTHORITY SECTION:',
-                    'moscow. 1853 IN NS c.dns.flexireg.org.',
-                    'moscow. 1853 IN NS a.dns.flexireg.ru.',
-                    'moscow. 1853 IN NS b.dns.flexireg.net.',
-                    'moscow. 1853 IN NS d.dns.flexireg.domains.'
-                  ]%}
-
-                  <h3 class="domain-info-heading">
-                    dns records
-                  </h3>
-
-                  {% for item in info_two %}
-                  <p class="domain-info-text text-justify{{ ' mb-0' if loop.index == info_one.length else ' mb-1'}}">
-                    {{ item }}
-                  </p>
-                  {% endfor %}
-                </div>
-              </div>
+          <div data-timeline>
+            <div class="report-timeline-info">
+              <span data-timeline-date></span>
+              <span class="report-timeline-amount">
+                Amount: <span data-timeline-amount></span>
+              </span>
             </div>
 
-            <label for="domain-info" class="domain-info-label"
-              style="background-image: url({{ url + 'assets/imgs/report-icon-arrow-down.png'}});">
-              toggle
-            </label>
+            <div class="report-timeline" id="visualization"></div>
+
+            <div data-timeline-structure class="report-timeline-structure"></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <p class="text-center small font-weight-bold">
+            Structure of compromised private data for britishairways.com - <span data-timeline-chart-name>All breaches</span>
+          </p>
+
+          <canvas data-timeline-chart></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="container page-report-box">
+      <div class="row">
+        <h2 class="col-12 page-report-heading">
+          Compromised Accounts Encryption Types
+        </h2>
+        <div class="col-12">
+          <div class="page-report-box-content">
+            <div class="row">
+              <div class="col-6">
+              </div>
+
+              <div class="col-6">
+
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-12 col-lg-6">
-        <p class="page-report-breaches">
-          <span class="page-report-breaches-cnt">25<i class="page-report-breaches-icon"
-              style="background-image: url({{ url + 'assets/imgs/report-krypton-light-bolt.png'}});"></i></span>emails
-        </p>
-        <p class="page-report-breaches-caption">were found in breached databases</p>
-        <p class="page-report-breaches-link"><a href="#">why is this inportant<span class="page-report-breaches-link-icon" style="background-image: url({{ url + 'assets/imgs/report-icon-question.png'}});"></span></a></p>
-      </div>
     </div>
 
-    <div class="page-report-container page-report-container-stats row">
-      <div class="col-12">
-        <div class="page-report-stats">
-          <div class="page-report-stats-block"><img src="{{ url + 'assets/imgs/report-krypton-stats-1.png'}}" alt=""></div>
-          <div class="page-report-stats-block"><img src="{{ url + 'assets/imgs/report-krypton-stats-2.png'}}" alt=""></div>
-          <div class="page-report-stats-block"><img src="{{ url + 'assets/imgs/report-krypton-stats-3.png'}}" alt=""></div>
-          <div class="page-report-stats-block"><img src="{{ url + 'assets/imgs/report-krypton-stats-4.png'}}" alt=""></div>
-        </div>
-
-        <p class="mb-0 text-center">
-          <a href="#" class="btn btn-theme text-uppercase">View full report</a>
-        </p>
-      </div>
-    </div>
   </div>
 </div>
 
