@@ -1,6 +1,6 @@
 {% extends "layout.njk" %}
 
-{% import "blocks/domain.njk" as domain %}
+{% import "blocks/box.njk" as box %}
 
 {% block content %}
 
@@ -53,21 +53,29 @@
     </div>
 
     <div class="container page-report-box">
+      {% include "partials/report-charts.njk" %}
+    </div>
+
+    <div class="container page-report-box">
+      {% include "partials/report-passwords.njk" %}
+    </div>
+
+    <div class="container page-report-box">
       <div class="row">
-        <h2 class="col-12 page-report-heading">
-          Compromised Accounts Encryption Types
-        </h2>
-        <div class="col-12">
-          <div class="page-report-box-content">
-            <div class="row">
-              <div class="col-6">
-              </div>
+        <div class="col-12 col-md-6 d-flex">
+          {% set content %}
+            <canvas data-chart data-chart-dataset="types"></canvas>
+          {% endset %}
 
-              <div class="col-6">
+          {{ box.make({ content: content, class: 'box_theme_turquoise', heading: 'Username-Password Combinations Across Breaches', plate: 'Usernames-password matches of corporate accounts across all breaches' }) }}
+        </div>
 
-              </div>
-            </div>
-          </div>
+        <div class="col-12 col-md-6 d-flex">
+          {% set content %}
+            <canvas data-chart data-chart-dataset="types"></canvas>
+          {% endset %}
+
+          {{ box.make({ content: content, class: 'box_theme_turquoise w-100', heading: 'Type of breached accounts', plate: 'Users and corporate clients' }) }}
         </div>
       </div>
     </div>

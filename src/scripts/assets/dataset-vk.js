@@ -3,8 +3,8 @@ export default {
   data: {
     labels: ['Plain text', 'Easily cracked', 'Standart protection', 'Strongest encryption'],
     datasets: [{
-      label: 'Skype.com',
-      data: [11, 9, 5, 0],
+      label: 'Vkontakte',
+      data: [7, 3, 12, 5],
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
         'rgba(54, 162, 235, 0.2)',
@@ -25,7 +25,7 @@ export default {
       display: false,
       title: {
         display: true,
-        text: 'Skype.com'
+        text: 'Vkontakte'
       },
       labels: {
         fontFamily: "'Dosis', sans-serif",

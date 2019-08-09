@@ -1,0 +1,24 @@
+{% import "blocks/box.njk" as box %}
+
+<div class="row">
+  <div class="col-12">
+    {% set content %}
+      <div class="row">
+        <div class="col-12 col-lg-6 py-3">
+          <canvas data-chart data-chart-dataset="skype"></canvas>
+        </div>
+        <div class="col-12 col-lg-6 py-3">
+          <canvas data-chart data-chart-dataset="tw"></canvas>
+        </div>
+        <div class="col-12 col-lg-6 py-3">
+          <canvas data-chart data-chart-dataset="inst"></canvas>
+        </div>
+        <div class="col-12 col-lg-6 py-3">
+          <canvas data-chart data-chart-dataset="vk"></canvas>
+        </div>
+      </div>
+    {% endset %}
+
+    {{ box.make({ content: content, heading: 'Compromised Accounts Encryption Types', plate: 'Password protection chart' })}}
+  </div>
+</div>

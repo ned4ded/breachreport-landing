@@ -226,6 +226,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 
 /***/ }),
 
+/***/ "./src/scripts/assets/dataset-inst.js":
+/*!********************************************!*\
+  !*** ./src/scripts/assets/dataset-inst.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  type: 'horizontalBar',\n  data: {\n    labels: ['Plain text', 'Easily cracked', 'Standart protection', 'Strongest encryption'],\n    datasets: [{\n      label: 'Instagram',\n      data: [4, 3, 9, 11],\n      backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)'],\n      borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)'],\n      borderWidth: 1\n    }]\n  },\n  options: {\n    legend: {\n      display: false,\n      title: {\n        display: true,\n        text: 'Instagram'\n      },\n      labels: {\n        fontFamily: \"'Dosis', sans-serif\"\n      }\n    },\n    scales: {\n      yAxes: [{\n        barPercentage: 0.2\n      }],\n      xAxes: [{\n        ticks: {\n          beginAtZero: true\n        }\n      }]\n    }\n  }\n});\n\n//# sourceURL=webpack:///./src/scripts/assets/dataset-inst.js?");
+
+/***/ }),
+
 /***/ "./src/scripts/assets/dataset-skype-polar.js":
 /*!***************************************************!*\
   !*** ./src/scripts/assets/dataset-skype-polar.js ***!
@@ -246,7 +258,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  type: 'horizontalBar',\n  data: {\n    labels: ['Plain text', 'Easily cracked', 'Standart protection', 'Strongest encryption'],\n    datasets: [{\n      label: 'Skype.com',\n      data: [11, 9, 5, 0],\n      backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)'],\n      borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)'],\n      borderWidth: 1\n    }]\n  },\n  options: {\n    legend: {\n      display: false,\n      title: {\n        display: true,\n        text: 'Skype.com'\n      },\n      labels: {\n        fontFamily: \"'Dosis', sans-serif\"\n      }\n    },\n    scales: {\n      yAxes: [{\n        barPercentage: 0.2,\n        ticks: {\n          beginAtZero: true\n        }\n      }]\n    }\n  }\n});\n\n//# sourceURL=webpack:///./src/scripts/assets/dataset-skype.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  type: 'horizontalBar',\n  data: {\n    labels: ['Plain text', 'Easily cracked', 'Standart protection', 'Strongest encryption'],\n    datasets: [{\n      label: 'Skype.com',\n      data: [11, 9, 5, 0],\n      backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)'],\n      borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)'],\n      borderWidth: 1\n    }]\n  },\n  options: {\n    legend: {\n      display: false,\n      title: {\n        display: true,\n        text: 'Skype.com'\n      },\n      labels: {\n        fontFamily: \"'Dosis', sans-serif\"\n      }\n    },\n    scales: {\n      yAxes: [{\n        barPercentage: 0.2\n      }],\n      xAxes: [{\n        ticks: {\n          beginAtZero: true\n        }\n      }]\n    }\n  }\n});\n\n//# sourceURL=webpack:///./src/scripts/assets/dataset-skype.js?");
 
 /***/ }),
 
@@ -262,6 +274,30 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 
 /***/ }),
 
+/***/ "./src/scripts/assets/dataset-tw.js":
+/*!******************************************!*\
+  !*** ./src/scripts/assets/dataset-tw.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  type: 'horizontalBar',\n  data: {\n    labels: ['Plain text', 'Easily cracked', 'Standart protection', 'Strongest encryption'],\n    datasets: [{\n      label: 'Twitter',\n      data: [10, 11, 6, 1],\n      backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)'],\n      borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)'],\n      borderWidth: 1\n    }]\n  },\n  options: {\n    legend: {\n      display: false,\n      title: {\n        display: true,\n        text: 'Twitter'\n      },\n      labels: {\n        fontFamily: \"'Dosis', sans-serif\"\n      }\n    },\n    scales: {\n      yAxes: [{\n        barPercentage: 0.2\n      }],\n      xAxes: [{\n        ticks: {\n          beginAtZero: true\n        }\n      }]\n    }\n  }\n});\n\n//# sourceURL=webpack:///./src/scripts/assets/dataset-tw.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/assets/dataset-type-of-breached-accountes.js":
+/*!******************************************************************!*\
+  !*** ./src/scripts/assets/dataset-type-of-breached-accountes.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  type: 'doughnut',\n  data: {\n    labels: ['Corporate accounts', 'User accounts'],\n    datasets: [{\n      label: 'Type of breached accounts',\n      data: [25, 146],\n      backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)'],\n      borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)'],\n      borderWidth: 1\n    }]\n  }\n});\n\n//# sourceURL=webpack:///./src/scripts/assets/dataset-type-of-breached-accountes.js?");
+
+/***/ }),
+
 /***/ "./src/scripts/assets/dataset-vk-polar.js":
 /*!************************************************!*\
   !*** ./src/scripts/assets/dataset-vk-polar.js ***!
@@ -271,6 +307,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  type: 'polarArea',\n  data: {\n    labels: [\"Username\", \"Password\", \"IP address\"],\n    datasets: [{\n      label: \"Breaches\",\n      backgroundColor: [\"rgba(255, 99, 132, .4)\", \"rgba(75, 192, 192, .4)\", \"rgba(255, 205, 86, .4)\"],\n      data: [15, 10, 20]\n    }]\n  },\n  options: {\n    legend: {\n      position: 'right'\n    },\n    title: {\n      display: false,\n      text: 'Structure of compromised private data for britishairways.com - Vkontakte'\n    }\n  }\n});\n\n//# sourceURL=webpack:///./src/scripts/assets/dataset-vk-polar.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/assets/dataset-vk.js":
+/*!******************************************!*\
+  !*** ./src/scripts/assets/dataset-vk.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  type: 'horizontalBar',\n  data: {\n    labels: ['Plain text', 'Easily cracked', 'Standart protection', 'Strongest encryption'],\n    datasets: [{\n      label: 'Vkontakte',\n      data: [7, 3, 12, 5],\n      backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)'],\n      borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)'],\n      borderWidth: 1\n    }]\n  },\n  options: {\n    legend: {\n      display: false,\n      title: {\n        display: true,\n        text: 'Vkontakte'\n      },\n      labels: {\n        fontFamily: \"'Dosis', sans-serif\"\n      }\n    },\n    scales: {\n      yAxes: [{\n        barPercentage: 0.2\n      }],\n      xAxes: [{\n        ticks: {\n          beginAtZero: true\n        }\n      }]\n    }\n  }\n});\n\n//# sourceURL=webpack:///./src/scripts/assets/dataset-vk.js?");
 
 /***/ }),
 
@@ -294,7 +342,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nvar ELEMENT_ATTR_NAME = 'data
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"datasets\", function() { return datasets; });\n/* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! chart.js */ \"./node_modules/chart.js/dist/Chart.js\");\n/* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(chart_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _assets_dataset_skype__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/dataset-skype */ \"./src/scripts/assets/dataset-skype.js\");\n/* harmony import */ var _assets_dataset_britishairways__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/dataset-britishairways */ \"./src/scripts/assets/dataset-britishairways.js\");\n\n\n\nvar datasets = {\n  skype: _assets_dataset_skype__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n  britishairways: _assets_dataset_britishairways__WEBPACK_IMPORTED_MODULE_2__[\"default\"]\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (function () {\n  var ch = document.querySelectorAll('[data-chart]');\n  if (!ch.length) return;\n  ch.forEach(function (v) {\n    var dataset = v.dataset.chartDataset;\n    if (!datasets[dataset]) return;\n    var context = v.getContext('2d');\n    new chart_js__WEBPACK_IMPORTED_MODULE_0___default.a(context, datasets[dataset]);\n  });\n});\n\n//# sourceURL=webpack:///./src/scripts/chart.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"datasets\", function() { return datasets; });\n/* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! chart.js */ \"./node_modules/chart.js/dist/Chart.js\");\n/* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(chart_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _assets_dataset_skype__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/dataset-skype */ \"./src/scripts/assets/dataset-skype.js\");\n/* harmony import */ var _assets_dataset_tw__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/dataset-tw */ \"./src/scripts/assets/dataset-tw.js\");\n/* harmony import */ var _assets_dataset_vk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/dataset-vk */ \"./src/scripts/assets/dataset-vk.js\");\n/* harmony import */ var _assets_dataset_inst__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./assets/dataset-inst */ \"./src/scripts/assets/dataset-inst.js\");\n/* harmony import */ var _assets_dataset_type_of_breached_accountes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./assets/dataset-type-of-breached-accountes */ \"./src/scripts/assets/dataset-type-of-breached-accountes.js\");\n\n\n\n\n\n\nvar datasets = {\n  skype: _assets_dataset_skype__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n  tw: _assets_dataset_tw__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n  vk: _assets_dataset_vk__WEBPACK_IMPORTED_MODULE_3__[\"default\"],\n  inst: _assets_dataset_inst__WEBPACK_IMPORTED_MODULE_4__[\"default\"],\n  types: _assets_dataset_type_of_breached_accountes__WEBPACK_IMPORTED_MODULE_6__[\"default\"]\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (function () {\n  var ch = document.querySelectorAll('[data-chart]');\n  if (!ch.length) return;\n  ch.forEach(function (v) {\n    var dataset = v.dataset.chartDataset;\n    if (!datasets[dataset]) return;\n    var context = v.getContext('2d');\n    new chart_js__WEBPACK_IMPORTED_MODULE_0___default.a(context, datasets[dataset]);\n  });\n});\n\n//# sourceURL=webpack:///./src/scripts/chart.js?");
 
 /***/ }),
 

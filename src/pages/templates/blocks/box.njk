@@ -1,0 +1,21 @@
+{% macro make(obj) %}
+  <div class="box{{ ' ' + obj.class if obj.class }}">
+    <div class="box-body">
+      <div class="box-header">
+        <div class="box-plate">
+          <div class="box-plate-content">
+            {{ obj.plate }}
+          </div>
+        </div>
+
+        <h2 class="box-heading page-report-heading">
+          {{ obj.heading | safe }}
+        </h2>
+      </div>
+
+      <div class="box-content">
+        {{ obj.content | safe }}
+      </div>
+    </div>
+  </div>
+{% endmacro %}
