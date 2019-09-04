@@ -198,4 +198,13 @@ $( document ).ready(function () {
   $('.btn-purchase').click(function(e) {
     ga('send', 'event', 'Purchase Now', 'click')
   })
+
+  $('.social-link').click(function(e) {
+    ga('send', 'event', {
+      eventCategory: 'Outbound Link',
+      eventAction: 'click',
+      eventLabel: e.target.href,
+      transport: 'beacon'
+    });
+  })
 })
