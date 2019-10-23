@@ -32,7 +32,13 @@
           <form id="mc-form" class="group" data-form-verify="form">
             <input type="email" value="" name="search" class="email" placeholder="Enter your email - check for breaches" required="">
             <span class="animated-btn">
-              <button class="btn btn-theme animated-btn__btn" type="submit">Search</button>
+              <button class="btn btn-theme animated-btn__btn mc-form-submit" type="submit">
+                Search
+                <div class="page-loader-wrapper">
+                  <img class="page-loader__spinner" src="/assets/img/loader.svg">
+                  <img src="/assets/img/loaderLogo.svg">
+                </div>
+              </button>
 
               <span class="animated-btn__bg"></span>
             </span>

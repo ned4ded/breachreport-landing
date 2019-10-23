@@ -88,7 +88,7 @@ function menu() {
 --------------------------------------*/
 function counter() {  
   $('.count-number').countTo({
-    refreshInterval: 2
+    refreshInterval: 100
   });   
 };
 
@@ -447,4 +447,3 @@ $(window).on('load', function() {
     wowanimation();
 });
 
-  

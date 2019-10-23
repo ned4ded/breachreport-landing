@@ -8,7 +8,7 @@
 				from:            $(this).data('from'),
 				to:              $(this).data('to'),
 				speed:           $(this).data('speed'),
-				refreshInterval: $(this).data('refresh-interval'),
+				refreshInterval: 100,
 				decimals:        $(this).data('decimals')
 			}, options);
 			
@@ -29,7 +29,7 @@
 			if (data.interval) {
 				clearInterval(data.interval);
 			}
-			data.interval = setInterval(updateTimer, settings.refreshInterval);
+			data.interval = setInterval(updateTimer, 50);
 			
 			// initialize the element with the starting value
 			render(value);

@@ -209,6 +209,7 @@ export default async () => {
     }
 
     if ($form.parents('#jumbotron-verify').length && email.dataset.email !== 'false') {
+
       const { err, user } = await getUserByEmailAsync(email.dataset.email)
 
       $form.find('input[name="search"]').val(email.dataset.email)
@@ -218,10 +219,15 @@ export default async () => {
 
     $form.submit(async function(e) {
       e.preventDefault()
+      const self = $(this)
 
+      self.find('.page-loader-wrapper').addClass('d-inline-block')
       const { value: email } = $(this).serializeArray().find(({ name }) => name == 'search')
 
+
       const { err, user } = await getUserByEmailAsync(email)
+
+      self.find('.page-loader-wrapper').removeClass('d-inline-block')
 
       renderNotes(err, user)
     })

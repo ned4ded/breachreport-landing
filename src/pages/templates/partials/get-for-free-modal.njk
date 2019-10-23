@@ -13,7 +13,13 @@
           <div data-form-verify="container" class="subscribe-form mb-1">
             <form id="mc-form" class="group" data-form-verify="form">
               <input type="email" value="" name="search" class="email" placeholder="Email address" required="">
-              <button class="btn btn-theme" type="submit">Verify</button>
+              <button class="btn btn-theme" type="submit">
+                Verify
+                <div class="page-loader-wrapper">
+                  <img class="page-loader__spinner" src="/assets/img/loader.svg">
+                  <img src="/assets/img/loaderLogo.svg">
+                </div>
+              </button>
             </form>
 
               <div data-form-verify="notes" class="mt-2" style="min-height: 110px;">

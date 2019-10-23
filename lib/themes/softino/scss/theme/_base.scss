@@ -712,6 +712,13 @@ button, img, span, .dropdown-item, .social-icons li:hover a, .owl-item {
 
 #mc-form {
   width: 100%;
+
+  &.form-progress {
+    .page-loader-wrapper {
+      display: block;
+    }
+  }
+
   input[type="email"] {
     width: 100%;
     border: none;
@@ -740,6 +747,32 @@ button, img, span, .dropdown-item, .social-icons li:hover a, .owl-item {
     &:hover {
       @include transform(translateX(-3px))
     }
+  }
+
+  .mc-form-submit {
+    display: flex;
+    align-items:center;
+  }
+}
+
+.page-loader {
+
+  &-wrapper {
+    width:20px;
+    height:20px;
+    position: relative;
+    margin-left: 10px;
+    display: none;
+  }
+
+  &__spinner {
+    animation: rotate 3s linear infinite !important;
+    transform-origin: center center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }
 
@@ -959,4 +992,9 @@ button, img, span, .dropdown-item, .social-icons li:hover a, .owl-item {
 
 .flaticon-chain:before {
   content: "\f120";
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
 }
