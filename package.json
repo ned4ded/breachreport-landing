@@ -42,6 +42,6 @@
     "vis-timeline": "^5.1.0",
     "webpack": "^4.32.2",
     "webpack-stream": "^5.2.1",
-    "xmldom": "^0.1.27"
+    "xmldom": "^0.6.0"
   }
 }
